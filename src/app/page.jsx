@@ -1,8 +1,8 @@
-import Hero from "../components/hero/hero";
-import AboutusCaption from "../components/aboutusCaption/aboutusCaption";
-import OurProducts from "../components/ourProducts/ourProducts";
-import OurPlans from "../components/ourPlans/ourPlans";
-import OurClients from "../components/ourClients/ourClients";
+import AboutusCaption from "@/components/aboutusCaption/aboutusCaption";
+import Hero from "@/components/hero/hero";
+import OurClients from "@/components/ourClients/ourClients";
+import OurPlans from "@/components/ourPlans/ourPlans";
+import OurProducts from "@/components/ourProducts/ourProducts";
 
 export default function Home() {
   return (<>
