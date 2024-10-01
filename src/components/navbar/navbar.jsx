@@ -1,6 +1,6 @@
 'use client'
 
-import { AnimatePresence, color, motion } from 'framer-motion'
+import { AnimatePresence, color, motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -16,6 +16,22 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
     const [isOpenServices, setIsOpenServices] = useState(false)
     const [isOpenPlans, setIsOpenPlans] = useState(false)
+    const [navHidden, setNavHidden] = useState(false)
+    let { scrollY } = useScroll()
+    console.log(scrollY);
+    useMotionValueEvent(scrollY, 'change', (latest) => {
+        const prev = scrollY.getPrevious()
+        if (latest <= prev && latest > 150) {
+            setNavHidden(true)
+        } else {
+            setNavHidden(false)
+        }
+    })
+
+    let closeMeun = () => {
+        setIsOpenPlans(false)
+        setIsOpenServices(false)
+    }
 
     const showMenu = {
         enter: {
@@ -56,8 +72,11 @@ export default function Navbar() {
     };
 
     return (<>
-        <nav className="bg-white">
-            <div className="max-w-screen-xl flex flex-wrap items-center justify-evenly gap-10 lg:gap-0 lg:justify-evenly mx-auto p-2">
+        <motion.nav variants={{ visible: { y: 0 }, hidden: { y: '-100%' } }}
+            animate={navHidden ? 'hidden' : 'visible'}
+            transition={{ duration: .5, ease: 'easeInOut' }}
+            className="bg-white fixed top-0 left-0 right-0 z-50">
+            <div className="flex flex-wrap items-center justify-evenly gap-10 lg:gap-0 lg:justify-evenly mx-auto p-2">
                 <Link href={'/'} className="flex items-center ">
                     <Image priority={true} src={logo} className="w-52" alt="On-Dm Logo" />
                 </Link>
@@ -70,11 +89,11 @@ export default function Navbar() {
                 </div>
                 <div className="items-center justify-between hidden lg:flex">
                     <ul className="flex p-4 font-bold">
-                        <li>
-                            <Link href={'/'} className="block py-2 px-3 text-gray-900">الصفحه الرئيسية</Link>
+                        <li onClick={closeMeun}>
+                            <Link hrefLang='#home' href={'/#home'} className="block py-2 px-3 text-gray-900">الصفحه الرئيسية</Link>
                         </li>
-                        <li onClick={() => setIsOpenPlans(false)} className='relative'>
-                            <Link onClick={() => setIsOpenServices(!isOpenServices)} href={'/'} className="py-2 px-3 text-gray-900 flex items-center gap-x-1">الخدمات <IoMdArrowDropdown /></Link>
+                        <motion.li onClick={() => setIsOpenPlans(false)} className='relative'>
+                            <Link onClick={() => setIsOpenServices(!isOpenServices)} href={'/#products'} className="py-2 px-3 text-gray-900 flex items-center gap-x-1">الخدمات <IoMdArrowDropdown /></Link>
                             <motion.ul
                                 onClick={() => setIsOpenServices(false)}
                                 // onHoverEnd={() => setIsOpenCategory(false)}
@@ -87,9 +106,9 @@ export default function Navbar() {
                                 <li className=' border-b-2 py-3 px-4 w-72 hover:bg-[#ffd32b] duration-300'>برمجة خاصة</li>
                                 <li className=' border-b-2 py-3 px-4 w-72 hover:bg-[#ffd32b] duration-300'>تسويق الكتروني</li>
                             </motion.ul>
-                        </li>
+                        </motion.li>
                         <li onClick={() => setIsOpenServices(false)} className='relative'>
-                            <Link onClick={() => setIsOpenPlans(!isOpenPlans)} href={'/'} className="py-2 px-3 text-gray-900 flex items-center gap-x-1">الخطط <IoMdArrowDropdown /></Link>
+                            <Link onClick={() => setIsOpenPlans(!isOpenPlans)} href={'/#plans'} className="py-2 px-3 text-gray-900 flex items-center gap-x-1">الخطط <IoMdArrowDropdown /></Link>
                             <motion.ul
                                 onClick={() => setIsOpenPlans(false)}
                                 // onHoverEnd={() => setIsOpenCategory(false)}
@@ -103,69 +122,70 @@ export default function Navbar() {
                                 <li className=' border-b-2 py-3 px-4 w-40 hover:bg-[#ffd32b] duration-300'>خطة ON DM</li>
                             </motion.ul>
                         </li>
-                        <li>
+                        <li onClick={closeMeun}>
                             <Link href={'/aboutus'} className="block py-2 px-3 text-gray-900">من نحن</Link>
                         </li>
-                        <li>
+                        <li onClick={closeMeun}>
                             <Link href={'/contactus'} className="block py-2 px-3 text-gray-900">تواصل معنا</Link>
                         </li>
-                        <li>
+                        <li onClick={closeMeun}>
                             <Link href={'/ourblog'} className="block py-2 px-3 text-gray-900">المدونة</Link>
                         </li>
                     </ul>
                 </div>
                 {/* moblie screen */}
-                <AnimatePresence>
-                    {isOpen && <div className="lg:hidden z-50 fixed top-0 right-0 bottom-0 left-0 bg-slate-600 bg-opacity-75 md:order-1">
-                        <motion.ul initial={{ x: 350 }} whileInView={{ x: 0 }} exit={{ x: 300, opacity: 0 }} transition={{ duration: .5 }} className="fixed top-0 right-0 bottom-0 left-0 bg-[#fff] text-black flex flex-col justify-start font-bold overflow-auto cursor-pointer">
-                            <li className='flex overflow-hidden items-center justify-between border-b-2 p-4 text-start bg-[#fff]'>
-                                <IoCloseOutline onClick={() => setIsOpen(!isOpen)} size={35} className='cursor-pointer hover:rotate-180 duration-300' />
-                                <Image priority={true} src={logo} className="w-52" alt="On-Dm Logo" />
-                            </li>
-                            <li onClick={() => setIsOpen(!isOpen)} className='border-b-2 p-4 hover:bg-[#ffd32b] duration-300'>
-                                <Link href={'/'} className="block py-2 px-3 hover:mr-5 duration-300">الصفحه الرئيسية</Link>
-                            </li>
-                            <li onClick={() => setIsOpenServices(!isOpenServices)} className='relative border-b-2 p-4 hover:bg-[#ffd32b] duration-300'>
-                                <div className="py-2 px-3 hover:mr-5 duration-300 flex items-center gap-x-1">الخدمات <IoMdArrowDropdown /></div>
-                            </li>
-                            <motion.ul
-                                variants={showMenu}
-                                initial="exit"
-                                animate={isOpenServices ? "enter" : "exit"}
-                                className={`${isOpenServices ? '' : 'hidden'} cursor-pointer origin-top`}>
-                                <li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>تصميم مواقع الكترونية للشركات</li>
-                                <li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>تصميم متاجر الكترونية</li>
-                                <li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>برمجة خاصة</li>
-                                <li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>تسويق الكتروني</li>
-                            </motion.ul>
-                            <li onClick={() => setIsOpenPlans(!isOpenPlans)} className='border-b-2 p-4 hover:bg-[#ffd32b] duration-300'>
-                                <div className="py-2 px-3 hover:mr-5 duration-300 flex items-center gap-x-1">الخطط <IoMdArrowDropdown /></div>
-                            </li>
-                            <motion.ul
-                                // onClick={() => setIsOpenPlans(false)}
-                                variants={showMenu}
-                                initial="exit"
-                                animate={isOpenPlans ? "enter" : "exit"}
-                                className={`${isOpenPlans ? '' : 'hidden'} cursor-pointer origin-top`}>
-                                <li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>خطة ON Track</li>
-                                <li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>خطة ON Air</li>
-                                <li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>خطة ON Phone</li>
-                                <li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>خطة ON DM</li>
-                            </motion.ul>
-                            <li onClick={() => setIsOpen(!isOpen)} className='border-b-2 p-4 hover:bg-[#ffd32b] duration-300'>
-                                <Link href={'/aboutus'} className="block py-2 px-3 hover:mr-5 duration-300">من نحن</Link>
-                            </li>
-                            <li onClick={() => setIsOpen(!isOpen)} className='border-b-2 p-4 hover:bg-[#ffd32b] duration-300'>
-                                <Link href={'/contactus'} className="block py-2 px-3 hover:mr-5 duration-300">تواصل معنا</Link>
-                            </li>
-                            <li onClick={() => setIsOpen(!isOpen)} className='border-b-2 p-4 hover:bg-[#ffd32b] duration-300'>
-                                <Link href={'/ourblog'} className="block py-2 px-3 hover:mr-5 duration-300">المدونة</Link>
-                            </li>
-                        </motion.ul>
-                    </div>
-                    }
-                </AnimatePresence>
+
             </div>
-        </nav>
+        </motion.nav >
+        <AnimatePresence>
+            {isOpen && <nav className="lg:hidden z-50 fixed top-0 right-0 bottom-0 left-0 bg-slate-600 bg-opacity-75 md:order-1">
+                <motion.ul initial={{ x: 350 }} whileInView={{ x: 0 }} exit={{ x: 300, opacity: 0 }} transition={{ duration: .5 }} className="fixed top-0 right-0 bottom-0 left-0 w-full h-lvh bg-[#fff] text-black flex flex-col justify-start font-bold overflow-auto cursor-pointer">
+                    <li className='flex overflow-hidden items-center justify-between border-b-2 p-4 text-start bg-[#fff]'>
+                        <IoCloseOutline onClick={() => setIsOpen(!isOpen)} size={35} className='cursor-pointer hover:rotate-180 duration-300' />
+                        <Image priority={true} src={logo} className="w-52" alt="On-Dm Logo" />
+                    </li>
+                    <li onClick={() => setIsOpen(!isOpen)} className='border-b-2 p-4 hover:bg-[#ffd32b] duration-300'>
+                        <Link href={'/'} className="block py-2 px-3 hover:mr-5 duration-300">الصفحه الرئيسية</Link>
+                    </li>
+                    <li onClick={() => setIsOpenServices(!isOpenServices)} className='relative border-b-2 p-4 hover:bg-[#ffd32b] duration-300'>
+                        <div className="py-2 px-3 hover:mr-5 duration-300 flex items-center gap-x-1">الخدمات <IoMdArrowDropdown /></div>
+                    </li>
+                    <motion.ul
+                        variants={showMenu}
+                        initial="exit"
+                        animate={isOpenServices ? "enter" : "exit"}
+                        className={`${isOpenServices ? '' : 'hidden'} cursor-pointer origin-top`}>
+                        <li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>تصميم مواقع الكترونية للشركات</li>
+                        <li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>تصميم متاجر الكترونية</li>
+                        <li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>برمجة خاصة</li>
+                        <li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>تسويق الكتروني</li>
+                    </motion.ul>
+                    <li onClick={() => setIsOpenPlans(!isOpenPlans)} className='border-b-2 p-4 hover:bg-[#ffd32b] duration-300'>
+                        <div className="py-2 px-3 hover:mr-5 duration-300 flex items-center gap-x-1">الخطط <IoMdArrowDropdown /></div>
+                    </li>
+                    <motion.ul
+                        // onClick={() => setIsOpenPlans(false)}
+                        variants={showMenu}
+                        initial="exit"
+                        animate={isOpenPlans ? "enter" : "exit"}
+                        className={`${isOpenPlans ? '' : 'hidden'} cursor-pointer origin-top`}>
+                        <li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>خطة ON Track</li>
+                        <li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>خطة ON Air</li>
+                        <li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>خطة ON Phone</li>
+                        <li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>خطة ON DM</li>
+                    </motion.ul>
+                    <li onClick={() => setIsOpen(!isOpen)} className='border-b-2 p-4 hover:bg-[#ffd32b] duration-300'>
+                        <Link href={'/aboutus'} className="block py-2 px-3 hover:mr-5 duration-300">من نحن</Link>
+                    </li>
+                    <li onClick={() => setIsOpen(!isOpen)} className='border-b-2 p-4 hover:bg-[#ffd32b] duration-300'>
+                        <Link href={'/contactus'} className="block py-2 px-3 hover:mr-5 duration-300">تواصل معنا</Link>
+                    </li>
+                    <li onClick={() => setIsOpen(!isOpen)} className='border-b-2 p-4 hover:bg-[#ffd32b] duration-300'>
+                        <Link href={'/ourblog'} className="block py-2 px-3 hover:mr-5 duration-300">المدونة</Link>
+                    </li>
+                </motion.ul>
+            </nav>
+            }
+        </AnimatePresence>
     </>)
 }

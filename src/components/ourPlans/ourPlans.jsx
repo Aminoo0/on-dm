@@ -24,7 +24,7 @@ export default function OurPlans() {
     ]
 
     return (
-        <section className='px-7 lg:px-20 pb-20' >
+        <section id="plans" className='px-7 lg:px-20 pb-20 scroll-mt-28' >
             <h2 className='text-5xl text-center font-bold my-5'>خطط ONDM الشهرية</h2>
             <div className="flex flex-wrap gap-y-5">
                 {allPlans.map((plan) =>

@@ -4,6 +4,7 @@
 
 :root {
   direction: rtl;
+  scroll-behavior: smooth;
 }
 
 body {

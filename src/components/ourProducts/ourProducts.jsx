@@ -23,7 +23,7 @@ export default function OurProducts() {
     ]
 
     return (
-        <section className='pb-10 px-10'>
+        <section id='products' className='pb-10 px-10 scroll-mt-28'>
             <h2 className='text-center text-5xl font-bold'>منتجاتنا المميزة</h2>
             <div className='flex flex-wrap my-10'>
                 {allProducts.map((product) =>

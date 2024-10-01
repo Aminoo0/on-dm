@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 
 export default function Hero() {
     return (
-        <section className="flex flex-wrap gap-y-20 m-auto bg-[#1f1d0d] text-white p-8 lg:p-16 lg:px-36 pb-10">
+        <section id="home" className="scroll-mt-20 mt-20 flex flex-wrap gap-y-20 m-auto bg-[#1f1d0d] text-white p-8 lg:p-16 lg:px-36 pb-10">
             <div className="w-full lg:w-1/2 flex flex-col gap-y-10">
                 <h3 className="text-xl">تفوّق في عالم الرقميات</h3>
                 <motion.h1 initial={{ opacity: 0, y: 100 }}

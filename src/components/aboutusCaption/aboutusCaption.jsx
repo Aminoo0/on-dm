@@ -11,7 +11,7 @@ export default function AboutusCaption() {
             <div className='w-full lg:w-1/2'>
                 <h2 className='bg-clip-text text-transparent bg-gradient-to-r from-[#29281e] to-violet-500 font-semibold pb-3'>نهج إبداعي يجسد نجاحك على أرض الواقع بداية من تحويل فكرتك لموقع إلكتروني إلى تسويق فكرتك وتحويلها لأرباح.</h2>
                 <div className='relative hover:scale-105 duration-300'>
-                    <Image className='w-11/12 z-50 relative rounded-xl' src={aboutusCaption} alt='about us' />
+                    <Image className='w-11/12 z-40 relative rounded-xl' src={aboutusCaption} alt='about us' />
                     <div className='after:bg-[#ffd32b] after:absolute after:top-[7%] after:left-[5%] after:content-[""] after:w-11/12 after:h-full after:rounded-xl'></div>
                 </div>
             </div>
