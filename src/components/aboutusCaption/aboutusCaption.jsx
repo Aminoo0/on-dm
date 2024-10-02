@@ -16,29 +16,29 @@ export default function AboutusCaption() {
                 </div>
             </div>
             <div className='w-full lg:w-1/2 flex flex-wrap mt-10 lg:mt-0'>
-                <div className='w-1/2 p-3 order-1'>
-                    <div className='p-5 shadow-xl rounded-lg hover:bg-[#ffd32b] hover:scale-105 duration-300'>
+                <div className='w-1/2 p-1 lg:p-3 order-1'>
+                    <div className='p-2 lg:p-5 shadow-xl rounded-lg hover:bg-[#ffd32b] hover:scale-105 duration-300'>
                         <Image alt='about us' width={60} height={60} src={imgOne} />
                         <h2 className='font-bold my-2 text-xl'>تصميم مواقع</h2>
                         <p>حلول تصميم تلبي تطلعاتك ومتطلباتك تجعلك متميزًا في سوقك</p>
                     </div>
                 </div>
-                <div className='w-1/2 p-3 '>
-                    <div className='p-5 shadow-xl rounded-lg hover:bg-[#ffd32b] hover:scale-105 duration-300'>
+                <div className='w-1/2 p-1 lg:p-3 '>
+                    <div className='p-2 lg:p-5 shadow-xl rounded-lg hover:bg-[#ffd32b] hover:scale-105 duration-300'>
                         <Image alt='about us' width={60} height={60} src={imgTwo} />
                         <h2 className='font-bold my-2 text-xl'>متاجر إلكترونية</h2>
                         <p>تصميم متاجر إلكترونية متجاوبة جاهزة لاستقبال العملاء عبر الإنترنت</p>
                     </div>
                 </div>
-                <div className='w-1/2 p-3 '>
-                    <div className='p-5 shadow-xl rounded-lg hover:bg-[#ffd32b] hover:scale-105 duration-300'>
+                <div className='w-1/2 p-1 lg:p-3 '>
+                    <div className='p-2 lg:p-5 shadow-xl rounded-lg hover:bg-[#ffd32b] hover:scale-105 duration-300'>
                         <Image alt='about us' width={60} height={60} src={imgThree} />
                         <h2 className='font-bold my-2 text-xl'>برمجة خاصة</h2>
                         <p>مواقع وتطبيقات تضمن نجاحك الرقمي وتجسد أفكارك بأدق التفاصيل</p>
                     </div>
                 </div>
-                <div className='w-1/2 p-3 order-2'>
-                    <div className='p-5 shadow-xl rounded-lg hover:bg-[#ffd32b] hover:scale-105 duration-300'>
+                <div className='w-1/2 p-1 lg:p-3 order-2'>
+                    <div className='p-2 lg:p-5 shadow-xl rounded-lg hover:bg-[#ffd32b] hover:scale-105 duration-300'>
                         <Image alt='about us' width={60} height={60} src={imgFour} />
                         <h2 className='font-bold my-2 text-xl'>تسويق إلكتروني</h2>
                         <p>استراتيجيات مبتكرة في إعداد إعلانات مُستهدفة وحملات تسويقية لزيادة المبيعات</p>

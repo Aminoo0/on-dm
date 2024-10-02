@@ -93,8 +93,8 @@ export default function Navbar() {
                         <li onClick={closeMeun}>
                             <Link hrefLang='#home' href={'/#home'} className="block py-2 px-3 text-gray-900">الصفحه الرئيسية</Link>
                         </li>
-                        <motion.li onClick={() => setIsOpenPlans(false)} className='relative'>
-                            <Link onClick={() => setIsOpenServices(!isOpenServices)} href={'/#products'} className="py-2 px-3 text-gray-900 flex items-center gap-x-1">الخدمات <IoMdArrowDropdown /></Link>
+                        <motion.li onPointerEnter={() => setIsOpenPlans(false)} className='relative'>
+                            <Link onPointerEnter={() => setIsOpenServices(!isOpenServices)} href={'/#products'} className="py-2 px-3 text-gray-900 flex items-center gap-x-1">الخدمات <IoMdArrowDropdown /></Link>
                             <motion.ul
                                 onClick={() => setIsOpenServices(false)}
                                 // onHoverEnd={() => setIsOpenCategory(false)}
@@ -108,8 +108,8 @@ export default function Navbar() {
                                 <li className=' border-b-2 py-3 px-4 w-72 hover:bg-[#ffd32b] duration-300'>تسويق الكتروني</li>
                             </motion.ul>
                         </motion.li>
-                        <li onClick={() => setIsOpenServices(false)} className='relative'>
-                            <Link onClick={() => setIsOpenPlans(!isOpenPlans)} href={'/#plans'} className="py-2 px-3 text-gray-900 flex items-center gap-x-1">الخطط <IoMdArrowDropdown /></Link>
+                        <li onPointerEnter={() => setIsOpenServices(false)} className='relative'>
+                            <Link onPointerEnter={() => setIsOpenPlans(!isOpenPlans)} href={'/#plans'} className="py-2 px-3 text-gray-900 flex items-center gap-x-1">الخطط <IoMdArrowDropdown /></Link>
                             <motion.ul
                                 onClick={() => setIsOpenPlans(false)}
                                 // onHoverEnd={() => setIsOpenCategory(false)}
