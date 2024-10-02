@@ -16,7 +16,7 @@ import ContactUsCaption from "../contactUsCaption/contactUsCaption";
 export default function Footer() {
     return (<>
         <ContactUsCaption />
-        <footer className="bg-[#1f1d0d] text-white pb-16 pt-72 px-20">
+        <footer className="bg-[#1f1d0d] text-white pb-16 pt-72 px-3 lg:px-20">
             <div className="flex flex-wrap gap-y-20 items-start">
                 <div className="w-full lg:w-1/3 flex flex-col gap-y-10">
                     <Image src={footerLogo} alt="footer logo" />

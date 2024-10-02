@@ -66,7 +66,7 @@ export default function ALlPlans({ params }) {
             </div>
 
             <div className="mt-10 flex flex-col items-center shadow-2xl hover:shadow-xl duration-300 shadow-slate-500 p-7 mx-auto w-full">
-                <h2 className="text-5xl font-semibold">منتجات ذات صلة</h2>
+                <h2 className="text-5xl font-semibold text-nowrap">منتجات ذات صلة</h2>
                 <div className="flex flex-wrap w-full mx-auto mt-10">
                     {fliterPlans.map((onePlan) =>
                         <div key={onePlan.id} className="w-1/2 md:w-1/3 p-5">

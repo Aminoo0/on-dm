@@ -2,7 +2,7 @@
 
 import { AnimatePresence, color, motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseOutline } from "react-icons/io5";
 import { IoMdArrowDropdown } from "react-icons/io";
@@ -12,6 +12,7 @@ import Image from 'next/image';
 
 
 export default function Navbar() {
+
 
     const [isOpen, setIsOpen] = useState(false)
     const [isOpenServices, setIsOpenServices] = useState(false)

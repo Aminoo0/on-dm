@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${messiri.className} antialiased`}>
         <Navbar />
-        <div className='mt-24'>
+        <div className='mt-[75px] lg:mt-[88px]'>
           {children}
         </div>
         <Footer />
