@@ -5,20 +5,20 @@ export default function OurPlans() {
 
     const allPlans = [
         {
-            plan: 'خطة ON Track', price: 2100, oldPrice: 4200, isBlack: true,
+            id: 0, plan: 'خطة ON Track', price: 2100, oldPrice: 4200, isBlack: true, link: 'ON Track',
             details: [' 1. موقع ويب احترافي', ' 2. تكامل خدمات جوجل', ' 3. تطوير الهوية التجارية', ' 4. تحليلات وتحسين محركات البحث', ' 5. بوابات الدفع والسياسات'
                 , ' 6. مدير الحساب', ' 7. الدعم على مدار الساعة']
         },
         {
-            plan: 'خطة ON Air', price: 2999, oldPrice: 4999, isBlack: false,
+            id: 1, plan: 'خطة ON Air', price: 2999, oldPrice: 4999, isBlack: false, link: 'ON Air',
             details: [' 1. خطة تسويقية على وسائل التواصل الاجتماعي', ' 2. تطوير الهوية البصرية', ' 3. إعداد المنصات', ' 4. المنشورات والريلز اليومية', ' 5. إدارة الإعلانات']
         },
         {
-            plan: 'خطة ON Phone', price: 5000, oldPrice: 10000, isBlack: true,
+            id: 2, plan: 'خطة ON Phone', price: 5000, oldPrice: 10000, isBlack: true, link: 'ON Phone',
             details: [' 1. نظام إدارة علاقات العملاء (CRM)', ' 2. التعاون لمدة 8 ساعات في 6 أيام', ' 3. عمليات الحجز/الشراء', '4. التقارير اليومية', '5. الاجتماعات الأسبوعية', '6. الأهداف الشهرية']
         },
         {
-            plan: 'خطة ON DM', price: 8999, oldPrice: 20000, isBlack: false,
+            id: 3, plan: 'خطة ON DM', price: 8999, oldPrice: 20000, isBlack: false, link: 'ON DM',
             details: ['1. تكامل خطة ON Track', '2. تعزيز خطة ON Air', '3. تكامل خطة ON Phone']
         },
     ]
@@ -42,7 +42,7 @@ export default function OurPlans() {
                                     </>)}
                                 </ul>
                             </div>
-                            <Link href={''} className={`${plan.isBlack ? 'bg-black hover:bg-transparent hover:text-black outline outline-1' : 'bg-[#ffd32b] hover:bg-black hover:text-[#ffd32b] hover:outline-[#ffd32b] outline outline-1 outline-black'} py-3 w-1/2 text-center text-white self-center px-5 rounded-lg duration-300`}>اكتشف المزيد</Link>
+                            <Link href={`/product/${plan.id}/${plan.link}`} className={`${plan.isBlack ? 'bg-black hover:bg-transparent hover:text-black outline outline-1' : 'bg-[#ffd32b] hover:bg-black hover:text-[#ffd32b] hover:outline-[#ffd32b] outline outline-1 outline-black'} py-3 w-1/2 text-center text-white self-center px-5 rounded-lg duration-300`}>اكتشف المزيد</Link>
                         </div>
                     </div>
                 )}
