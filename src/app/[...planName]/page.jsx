@@ -7,7 +7,7 @@ import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
 
-export default function page({ params }) {
+export default function ALlPlans({ params }) {
     // console.log(params);
     const [openImg, setOpenImg] = useState(false)
     const plan = plans[params.planName[1]]
