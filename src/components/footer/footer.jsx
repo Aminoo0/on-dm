@@ -19,7 +19,7 @@ export default function Footer() {
         <footer className="bg-[#1f1d0d] text-white pb-16 pt-72 px-20">
             <div className="flex flex-wrap gap-y-20 items-start">
                 <div className="w-full lg:w-1/3 flex flex-col gap-y-10">
-                    <Image src={footerLogo} />
+                    <Image src={footerLogo} alt="footer logo" />
                     <p> فريقنا المبدع يقدم حلولًا رقمية مبتكرة واحترافية تلبي احتياجات عملك وتحقق النجاح عبر الإنترنت. ابنِ مستقبلك الرقمي مع خدماتنا المتميزة في تصميم المواقع والتسويق الإلكتروني.</p>
                 </div>
                 <div className="w-full lg:w-1/3 lg:flex flex-col items-center">

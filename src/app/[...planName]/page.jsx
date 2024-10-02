@@ -5,17 +5,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
-import { FaCcPaypal } from "react-icons/fa";
 
 
 export default function page({ params }) {
     // console.log(params);
     const [openImg, setOpenImg] = useState(false)
     const plan = plans[params.planName[1]]
-    console.log(plan);
+    // console.log(plan);
 
     let fliterPlans = plans.filter((plann) => plann.id !== plan.id)
-    console.log(fliterPlans);
+    // console.log(fliterPlans);
 
     // let allData = await fetch('https://jsonplaceholder.typicode.com/posts')
     // let data = await allData.json()
@@ -70,7 +69,7 @@ export default function page({ params }) {
                 <h2 className="text-5xl font-semibold">منتجات ذات صلة</h2>
                 <div className="flex flex-wrap w-full mx-auto mt-10">
                     {fliterPlans.map((onePlan) =>
-                        <div className="w-1/2 md:w-1/3 p-5">
+                        <div key={onePlan.id} className="w-1/2 md:w-1/3 p-5">
                             <Link href={`/product/${onePlan.id}/${onePlan.link}`} key={onePlan.id} className="hover:text-[#ffd32b] duration-300">
                                 <Image src={onePlan.img.src} width={500} height={500} alt="plan" className="rounded-md hover:scale-105 duration-300" />
                                 <h3 className="text-lg text-center mt-3">{onePlan.name}</h3>
