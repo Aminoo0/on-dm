@@ -31,10 +31,10 @@ export default function Hero() {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ ease: "easeInOut", duration: 1.75 }} className="bg-[#ffd32b] w-full rounded-md lg:w-3/4 mx-auto relative">
                     <Image src={heroMain} alt="hero" priority={true} width={300} height={300} className="mx-auto w-auto h-auto" />
-                    <motion.div className="absolute top-5 left-10 lg:-left-10" initial={{ x: -100, rotate: -90, opacity: 0 }}
+                    <motion.div className="absolute top-5 left-5 lg:-left-10" initial={{ x: -100, rotate: -90, opacity: 0 }}
                         whileInView={{ x: 0, rotate: 0, opacity: 1 }}
                         transition={{ ease: "easeInOut", duration: 0.75, delay: 1.5 }}>
-                        <Image src={favIcon} alt="favicon" priority={true} width={70} height={70} className="w-auto h-auto" />
+                        <Image src={favIcon} alt="favicon" priority={true} width={70} height={70} className="h-auto w-20 lg:w-auto" />
                     </motion.div>
                     <Image src={favIcon} alt="favicon" priority={true} width={70} height={70} className="hidden lg:block absolute bottom-5 -right-16 w-auto h-auto" />
                 </motion.div>

@@ -10,7 +10,6 @@ import logo from '../../app/assits/mainLogo.png'
 import egyptLogo from '../../app/assits/egyptLogo.png'
 import Image from 'next/image';
 
-
 export default function Navbar() {
 
 
@@ -93,8 +92,8 @@ export default function Navbar() {
                         <li onClick={closeMeun}>
                             <Link hrefLang='#home' href={'/#home'} className="block py-2 px-3 text-gray-900">الصفحه الرئيسية</Link>
                         </li>
-                        <motion.li onPointerEnter={() => setIsOpenPlans(false)} className='relative'>
-                            <Link onPointerEnter={() => setIsOpenServices(!isOpenServices)} href={'/#products'} className="py-2 px-3 text-gray-900 flex items-center gap-x-1">الخدمات <IoMdArrowDropdown /></Link>
+                        <motion.li onHoverStart={() => setIsOpenServices(true)} onHoverEnd={() => setIsOpenServices(false)} className='relative'>
+                            <Link href={'/#products'} className="py-2 px-3 text-gray-900 flex items-center gap-x-1">الخدمات <IoMdArrowDropdown /></Link>
                             <motion.ul
                                 onClick={() => setIsOpenServices(false)}
                                 // onHoverEnd={() => setIsOpenCategory(false)}
@@ -102,13 +101,13 @@ export default function Navbar() {
                                 initial="exit"
                                 animate={isOpenServices ? "enter" : "exit"}
                                 className={`${isOpenServices ? '' : 'hidden'} absolute cursor-pointer text-black bg-white z-40`}>
-                                <li className=' border-b-2 py-3 px-4 w-72 hover:bg-[#ffd32b] duration-300'>تصميم مواقع الكترونية للشركات</li>
-                                <li className=' border-b-2 py-3 px-4 w-72 hover:bg-[#ffd32b] duration-300'>تصميم متاجر الكترونية</li>
-                                <li className=' border-b-2 py-3 px-4 w-72 hover:bg-[#ffd32b] duration-300'>برمجة خاصة</li>
-                                <li className=' border-b-2 py-3 px-4 w-72 hover:bg-[#ffd32b] duration-300'>تسويق الكتروني</li>
+                                <Link href={`/تصميم-مواقع-إلكترونية-للشركات`}><li className=' border-b-2 py-3 px-4 w-72 hover:bg-[#ffd32b] duration-300'>تصميم مواقع الكترونية للشركات</li></Link>
+                                <Link href={`/تصميم-متاجر-إلكترونية`}><li className=' border-b-2 py-3 px-4 w-72 hover:bg-[#ffd32b] duration-300'>تصميم متاجر الكترونية</li></Link>
+                                <Link href={`/برمجة-خاصة`}><li className=' border-b-2 py-3 px-4 w-72 hover:bg-[#ffd32b] duration-300'>برمجة خاصة</li></Link>
+                                <Link href={`/تسويق-إلكتروني`}><li className=' border-b-2 py-3 px-4 w-72 hover:bg-[#ffd32b] duration-300'>تسويق الكتروني</li></Link>
                             </motion.ul>
                         </motion.li>
-                        <li onPointerEnter={() => setIsOpenServices(false)} className='relative'>
+                        <motion.li onHoverStart={() => setIsOpenPlans(true)} onHoverEnd={() => setIsOpenPlans(false)} className='relative'>
                             <Link onPointerEnter={() => setIsOpenPlans(!isOpenPlans)} href={'/#plans'} className="py-2 px-3 text-gray-900 flex items-center gap-x-1">الخطط <IoMdArrowDropdown /></Link>
                             <motion.ul
                                 onClick={() => setIsOpenPlans(false)}
@@ -117,12 +116,12 @@ export default function Navbar() {
                                 initial="exit"
                                 animate={isOpenPlans ? "enter" : "exit"}
                                 className={`${isOpenPlans ? '' : 'hidden'} absolute cursor-pointer text-black bg-white z-40`}>
-                                <Link href={'/product/0/ON Track'}><li className=' border-b-2 py-3 px-4 w-40 hover:bg-[#ffd32b] duration-300'>خطة ON Track</li></Link>
-                                <Link href={'/product/1/ON Air'}><li className=' border-b-2 py-3 px-4 w-40 hover:bg-[#ffd32b] duration-300'>خطة ON Air</li></Link>
-                                <Link href={'/product/2/ON Phone'}><li className=' border-b-2 py-3 px-4 w-40 hover:bg-[#ffd32b] duration-300'>خطة ON Phone</li></Link>
-                                <Link href={'/product/3/ON DM'}><li className=' border-b-2 py-3 px-4 w-40 hover:bg-[#ffd32b] duration-300'>خطة ON DM</li></Link>
+                                <Link href={'/product/خطة-on-track'}><li className=' border-b-2 py-3 px-4 w-40 hover:bg-[#ffd32b] duration-300'>خطة ON Track</li></Link>
+                                <Link href={'/product/خطة-on-air'}><li className=' border-b-2 py-3 px-4 w-40 hover:bg-[#ffd32b] duration-300'>خطة ON Air</li></Link>
+                                <Link href={'/product/خطة-on-phone'}><li className=' border-b-2 py-3 px-4 w-40 hover:bg-[#ffd32b] duration-300'>خطة ON Phone</li></Link>
+                                <Link href={'/product/خطة-on-dm'}><li className=' border-b-2 py-3 px-4 w-40 hover:bg-[#ffd32b] duration-300'>خطة ON DM</li></Link>
                             </motion.ul>
-                        </li>
+                        </motion.li>
                         <li onClick={closeMeun}>
                             <Link href={'/aboutus'} className="block py-2 px-3 text-gray-900">من نحن</Link>
                         </li>
@@ -156,10 +155,10 @@ export default function Navbar() {
                         initial="exit"
                         animate={isOpenServices ? "enter" : "exit"}
                         className={`${isOpenServices ? '' : 'hidden'} cursor-pointer origin-top`}>
-                        <li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>تصميم مواقع الكترونية للشركات</li>
-                        <li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>تصميم متاجر الكترونية</li>
-                        <li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>برمجة خاصة</li>
-                        <li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>تسويق الكتروني</li>
+                        <Link href={`/تصميم-مواقع-إلكترونية-للشركات`}><li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>تصميم مواقع الكترونية للشركات</li></Link>
+                        <Link href={`/تصميم-متاجر-إلكترونية`}><li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>تصميم متاجر الكترونية</li></Link>
+                        <Link href={`/برمجة-خاصة`}><li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>برمجة خاصة</li></Link>
+                        <Link href={`/تسويق-إلكتروني`}><li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>تسويق الكتروني</li></Link>
                     </motion.ul>
                     <li onClick={() => setIsOpenPlans(!isOpenPlans)} className='border-b-2 p-4 hover:bg-[#ffd32b] duration-300'>
                         <div className="py-2 px-3 hover:mr-5 duration-300 flex items-center gap-x-1">الخطط <IoMdArrowDropdown /></div>
@@ -170,10 +169,10 @@ export default function Navbar() {
                         initial="exit"
                         animate={isOpenPlans ? "enter" : "exit"}
                         className={`${isOpenPlans ? '' : 'hidden'} cursor-pointer origin-top`}>
-                        <Link href={'/product/0/ON Track'}><li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>خطة ON Track</li></Link>
-                        <Link href={'/product/1/ON Air'}><li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>خطة ON Air</li></Link>
-                        <Link href={'/product/2/ON Phone'}><li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>خطة ON Phone</li></Link>
-                        <Link href={'/product/3/ON DM'}><li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>خطة ON DM</li></Link>
+                        <Link href={'/product/خطة-on-track'}><li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>خطة ON Track</li></Link>
+                        <Link href={'/product/خطة-on-air'}><li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>خطة ON Air</li></Link>
+                        <Link href={'/product/خطة-on-phone'}><li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>خطة ON Phone</li></Link>
+                        <Link href={'/product/خطة-on-dm'}><li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>خطة ON DM</li></Link>
                     </motion.ul>
                     <li onClick={() => setIsOpen(!isOpen)} className='border-b-2 p-4 hover:bg-[#ffd32b] duration-300'>
                         <Link href={'/aboutus'} className="block py-2 px-3 hover:mr-5 duration-300">من نحن</Link>
