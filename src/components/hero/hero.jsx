@@ -27,7 +27,7 @@ export default function Hero() {
                     transition={{ ease: "easeInOut", duration: 0.75 }} className="bg-[#ffd32b] text-black p-3 px-10 w-full lg:w-1/2 rounded-md hover:text-[#ffd32b] hover:bg-transparent duration-300 hover:outline hover:outline-[#ffd32b] font-bold">تواصل معنا الآن</motion.button>
             </div>
             <div className="w-full lg:w-1/2 overflow-hidden">
-                <motion.div initial={{ opacity: 0, x: 300 }}
+                <motion.div initial={{ opacity: 0, x: 200 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ ease: "easeInOut", duration: 1.75 }} className="bg-[#ffd32b] w-full rounded-md lg:w-3/4 mx-auto relative">
                     <Image src={heroMain} alt="hero" priority={true} width={300} height={300} className="mx-auto w-auto h-auto" />
