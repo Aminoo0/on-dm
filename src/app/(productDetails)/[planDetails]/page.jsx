@@ -9,7 +9,7 @@ import { FaRegCheckCircle } from "react-icons/fa";
 export default function PlanDetails({ params }) {
 
     let product = products?.filter((link) => link.id == params.planDetails)
-    console.log(params);
+    // console.log(params);
     
 
     if (product[0]?.id !== params.planDetails) {
@@ -50,7 +50,7 @@ export default function PlanDetails({ params }) {
             </div>
             {!product[0].hidden ? <div className='mt-32 bg-slate-100 p-5'>
                 <h2 className='text-5xl font-semibold text-center my-10'>{product[0].secTitle}</h2>
-                <div className='flex flex-wrap justify-center items-center gap-0 gap-y-7 w-full lg:w-10/12 mx-auto'>
+                <div className='flex flex-wrap justify-center items-center gap-0 gap-y-7 w-full xl:w-10/12 mx-auto'>
                     <div className="w-full md:w-full lg:w-1/3 px-2">
                         <div className='shadow-xl bg-white hover:shadow-slate-500 flex flex-col justify-between rounded-lg py-5 hover:scale-105 duration-300'>
                             <div>

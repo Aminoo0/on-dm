@@ -1,7 +1,7 @@
 'use client'
 
 import FilterOne from "@/components/filterOne/filterOne";
-import { plans, plansTwo } from "@/data/plans"
+import { plans } from "@/data/plans"
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -14,10 +14,8 @@ export default function PlanDetails({ params }) {
     const keyword = params?.planName[0].replace(/%D8%AE%D8%B7%D8%A9-/g, '')
 
     const plan = plans?.filter((plann) => plann.link.replace(/خطة-/g, '') == keyword)
-    console.log(params.planName[0]);
+    // console.log(params.planName[0]);
 
-    const planTwo = plansTwo?.filter((plannTwo) => plannTwo?.id == params?.planName[0])
-    console.log(planTwo);
 
     // let allData = await fetch('https://jsonplaceholder.typicode.com/posts')
     // let data = await allData.json()
