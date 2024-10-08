@@ -15,6 +15,6 @@ export default function ContactUsCaption() {
                 <Link href={''} className='w-full lg:w-1/3 flex justify-center items-center gap-3 bg-[#1f1d0d] px-2 py-6 rounded-lg hover:bg-[#7ad03a] hover:text-slate-700 hover:scale-105 duration-300'><FaPhone size={25} /> اتصال هاتفي</Link>
                 <Link href={''} className='w-full lg:w-1/3 flex justify-center items-center gap-3 bg-[#1f1d0d] px-2 py-6 rounded-lg hover:bg-[#7ad03a] hover:text-slate-700 hover:scale-105 duration-300'><FaWhatsapp size={25} /> كلمنا واتساب</Link>
             </div>
-        </section >
+        </section>
     )
 }
