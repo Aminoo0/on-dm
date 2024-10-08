@@ -88,7 +88,7 @@ export default function ProductDetails({ params }) {
             </div>
 
             <div className="mt-10 flex flex-col items-center shadow-2xl hover:shadow-xl duration-300 shadow-slate-500 p-7 mx-auto w-full">
-                <h2 className="text-5xl font-semibold text-nowrap">منتجات ذات صلة</h2>
+                <h2 className="text-4xl font-semibold text-nowrap">منتجات ذات صلة</h2>
                 <div className="flex flex-wrap justify-evenly w-full mx-auto mt-10">
                     <FilterTwo params={keyword} />
                 </div>
