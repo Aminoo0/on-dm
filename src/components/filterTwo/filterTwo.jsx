@@ -28,7 +28,7 @@ export default function FilterTwo({ params }) {
                 <div key={onePlan.id} className="w-1/2 md:w-1/3 p-1 rounded-md">
                     <Link href={`/product/${onePlan.link}`} key={onePlan.id} className="hover:text-[#ffd32b] duration-300">
                         <Image src={onePlan.img.src} width={500} height={500} alt="plan" className="rounded-md hover:scale-105 duration-300" />
-                        <h3 className="text-lg text-center mt-3">{onePlan.name}</h3>
+                        <h3 className="text-center mt-3">{onePlan.name}</h3>
                     </Link>
                 </div>)
         }
@@ -37,7 +37,7 @@ export default function FilterTwo({ params }) {
                 <div key={onePlan.id} className="w-1/2 md:w-1/3 p-1 rounded-md">
                     <Link href={`/product/${onePlan.link}`} key={onePlan.id} className="hover:text-[#ffd32b] duration-300">
                         <Image src={onePlan.img.src} width={500} height={500} alt="plan" className="rounded-md hover:scale-105 duration-300" />
-                        <h3 className="text-lg text-center mt-3">{onePlan.name}</h3>
+                        <h3 className="text-center mt-3">{onePlan.name}</h3>
                     </Link>
                 </div>)
         }
@@ -46,7 +46,7 @@ export default function FilterTwo({ params }) {
                 <div key={onePlan.id} className="w-1/2 md:w-1/3 p-1 rounded-md">
                     <Link href={`/product/${onePlan.link}`} key={onePlan.id} className="hover:text-[#ffd32b] duration-300">
                         <Image src={onePlan.img.src} width={500} height={500} alt="plan" className="rounded-md hover:scale-105 duration-300" />
-                        <h3 className="text-lg text-center mt-3">{onePlan.name}</h3>
+                        <h3 className="text-center mt-3">{onePlan.name}</h3>
                     </Link>
                 </div>)
         }
