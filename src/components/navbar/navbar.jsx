@@ -12,13 +12,12 @@ import Image from 'next/image';
 
 export default function Navbar() {
 
-
     const [isOpen, setIsOpen] = useState(false)
     const [isOpenServices, setIsOpenServices] = useState(false)
     const [isOpenPlans, setIsOpenPlans] = useState(false)
     const [navHidden, setNavHidden] = useState(false)
     let { scrollY } = useScroll()
-    // console.log(scrollY);
+
     useMotionValueEvent(scrollY, 'change', (latest) => {
         const prev = scrollY.getPrevious()
         if (latest <= prev && latest > 150) {
@@ -116,10 +115,10 @@ export default function Navbar() {
                                 initial="exit"
                                 animate={isOpenPlans ? "enter" : "exit"}
                                 className={`${isOpenPlans ? '' : 'hidden'} absolute cursor-pointer text-black bg-white z-40`}>
-                                <Link href={'/product/خطة-on-track'}><li className=' border-b-2 py-3 px-4 w-40 hover:bg-[#ffd32b] duration-300'>خطة ON Track</li></Link>
-                                <Link href={'/product/خطة-on-air'}><li className=' border-b-2 py-3 px-4 w-40 hover:bg-[#ffd32b] duration-300'>خطة ON Air</li></Link>
-                                <Link href={'/product/خطة-on-phone'}><li className=' border-b-2 py-3 px-4 w-40 hover:bg-[#ffd32b] duration-300'>خطة ON Phone</li></Link>
-                                <Link href={'/product/خطة-on-dm'}><li className=' border-b-2 py-3 px-4 w-40 hover:bg-[#ffd32b] duration-300'>خطة ON DM</li></Link>
+                                <Link href={'/plan/خطة-on-track'}><li className=' border-b-2 py-3 px-4 w-40 hover:bg-[#ffd32b] duration-300'>خطة ON Track</li></Link>
+                                <Link href={'/plan/خطة-on-air'}><li className=' border-b-2 py-3 px-4 w-40 hover:bg-[#ffd32b] duration-300'>خطة ON Air</li></Link>
+                                <Link href={'/plan/خطة-on-phone'}><li className=' border-b-2 py-3 px-4 w-40 hover:bg-[#ffd32b] duration-300'>خطة ON Phone</li></Link>
+                                <Link href={'/plan/خطة-on-dm'}><li className=' border-b-2 py-3 px-4 w-40 hover:bg-[#ffd32b] duration-300'>خطة ON DM</li></Link>
                             </motion.ul>
                         </motion.li>
                         <li onClick={closeMeun}>
@@ -169,10 +168,10 @@ export default function Navbar() {
                         initial="exit"
                         animate={isOpenPlans ? "enter" : "exit"}
                         className={`${isOpenPlans ? '' : 'hidden'} cursor-pointer origin-top`}>
-                        <Link href={'/product/خطة-on-track'}><li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>خطة ON Track</li></Link>
-                        <Link href={'/product/خطة-on-air'}><li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>خطة ON Air</li></Link>
-                        <Link href={'/product/خطة-on-phone'}><li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>خطة ON Phone</li></Link>
-                        <Link href={'/product/خطة-on-dm'}><li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>خطة ON DM</li></Link>
+                        <Link href={'/plan/خطة-on-track'}><li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>خطة ON Track</li></Link>
+                        <Link href={'/plan/خطة-on-air'}><li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>خطة ON Air</li></Link>
+                        <Link href={'/plan/خطة-on-phone'}><li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>خطة ON Phone</li></Link>
+                        <Link href={'/plan/خطة-on-dm'}><li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>خطة ON DM</li></Link>
                     </motion.ul>
                     <li onClick={() => setIsOpen(!isOpen)} className='border-b-2 p-4 hover:bg-[#ffd32b] duration-300'>
                         <Link href={'/aboutus'} className="block py-2 px-3 hover:mr-5 duration-300">من نحن</Link>

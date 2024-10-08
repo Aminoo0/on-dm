@@ -2,6 +2,7 @@ import { El_Messiri } from 'next/font/google';
 import "./globals.css";
 import Footer from '@/components/footer/footer';
 import Navbar from '@/components/navbar/navbar';
+import { PlansTwoHiddenProvider } from '@/context/changePlansProvider';
 
 const messiri = El_Messiri({
   subsets: ['latin'],
@@ -19,7 +20,9 @@ export default function RootLayout({ children }) {
         className={`${messiri.className} antialiased`}>
         <Navbar />
         <div className='mt-[75px] lg:mt-[88px]'>
-          {children}
+          <PlansTwoHiddenProvider>
+            {children}
+          </PlansTwoHiddenProvider>
         </div>
         <Footer />
       </body>
