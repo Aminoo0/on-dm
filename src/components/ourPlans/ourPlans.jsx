@@ -42,7 +42,7 @@ export default function OurPlans() {
                                     </>)}
                                 </ul>
                             </div>
-                            <Link href={`/product/${plan.link}`} className={`${plan.isBlack ? 'bg-black hover:bg-transparent hover:text-black outline outline-1' : 'bg-[#ffd32b] hover:bg-black hover:text-[#ffd32b] hover:outline-[#ffd32b] outline outline-1 outline-black'} py-3 w-1/2 text-center text-white self-center px-5 rounded-lg duration-300`}>اكتشف المزيد</Link>
+                            <Link href={`/plan/${plan.link}`} className={`${plan.isBlack ? 'bg-black hover:bg-transparent hover:text-black outline outline-1' : 'bg-[#ffd32b] hover:bg-black hover:text-[#ffd32b] hover:outline-[#ffd32b] outline outline-1 outline-black'} py-3 w-1/2 text-center text-white self-center px-5 rounded-lg duration-300`}>اكتشف المزيد</Link>
                         </div>
                     </div>
                 )}

@@ -19,9 +19,6 @@ export default function PlanDetails({ params }) {
     const planTwo = plansTwo?.filter((plannTwo) => plannTwo?.id == params?.planName[0])
     console.log(planTwo);
 
-    // let fliterPlans = plans?.filter((plann) => plann.link.replace(/خطة-/g, '') !== keyword)
-    // console.log(fliterPlansTwo);
-
     // let allData = await fetch('https://jsonplaceholder.typicode.com/posts')
     // let data = await allData.json()
     // console.log(data);
@@ -80,7 +77,7 @@ export default function PlanDetails({ params }) {
 
             <div className="mt-10 flex flex-col items-center shadow-2xl hover:shadow-xl duration-300 shadow-slate-500 p-7 mx-auto w-full">
                 <h2 className="text-5xl font-semibold text-nowrap">منتجات ذات صلة</h2>
-                <div className="flex flex-wrap w-full mx-auto mt-10">
+                <div className="flex flex-wrap justify-center w-full mx-auto mt-10">
                     <FilterOne params={keyword} />
                 </div>
             </div>
