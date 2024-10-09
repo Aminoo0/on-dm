@@ -27,11 +27,6 @@ export default function Navbar() {
         }
     })
 
-    let closeMeun = () => {
-        setIsOpenPlans(false)
-        setIsOpenServices(false)
-    }
-
     const showMenu = {
         enter: {
             opacity: 1,
@@ -88,7 +83,7 @@ export default function Navbar() {
                 </div>
                 <div className="items-center justify-between hidden lg:flex">
                     <ul className="flex p-4 font-bold">
-                        <li onClick={closeMeun}>
+                        <li>
                             <Link hrefLang='#home' href={'/#home'} className="block py-2 px-3 text-gray-900">الصفحه الرئيسية</Link>
                         </li>
                         <motion.li onHoverStart={() => setIsOpenServices(true)} onHoverEnd={() => setIsOpenServices(false)} className='relative'>
@@ -121,13 +116,13 @@ export default function Navbar() {
                                 <Link href={'/plan/خطة-on-dm'}><li className=' border-b-2 py-3 px-4 w-40 hover:bg-[#ffd32b] duration-300'>خطة ON DM</li></Link>
                             </motion.ul>
                         </motion.li>
-                        <li onClick={closeMeun}>
-                            <Link href={'/aboutus'} className="block py-2 px-3 text-gray-900">من نحن</Link>
+                        <li>
+                            <Link href={'/%D9%85%D9%86-%D9%86%D8%AD%D9%86'} className="block py-2 px-3 text-gray-900">من نحن</Link>
                         </li>
-                        <li onClick={closeMeun}>
-                            <Link href={'/contactus'} className="block py-2 px-3 text-gray-900">تواصل معنا</Link>
+                        <li>
+                            <Link href={'/%D8%AA%D9%88%D8%A7%D8%B5%D9%84-%D9%85%D8%B9%D9%86%D8%A7'} className="block py-2 px-3 text-gray-900">تواصل معنا</Link>
                         </li>
-                        <li onClick={closeMeun}>
+                        <li>
                             <Link href={'/ourblog'} className="block py-2 px-3 text-gray-900">المدونة</Link>
                         </li>
                     </ul>
@@ -174,10 +169,10 @@ export default function Navbar() {
                         <Link href={'/plan/خطة-on-dm'}><li onClick={() => setIsOpen(!isOpen)} className=' border-b-2 py-3 pr-4 hover:bg-[#ffd32b] duration-300'>خطة ON DM</li></Link>
                     </motion.ul>
                     <li onClick={() => setIsOpen(!isOpen)} className='border-b-2 p-4 hover:bg-[#ffd32b] duration-300'>
-                        <Link href={'/aboutus'} className="block py-2 px-3 hover:mr-5 duration-300">من نحن</Link>
+                        <Link href={'/%D9%85%D9%86-%D9%86%D8%AD%D9%86'} className="block py-2 px-3 hover:mr-5 duration-300">من نحن</Link>
                     </li>
                     <li onClick={() => setIsOpen(!isOpen)} className='border-b-2 p-4 hover:bg-[#ffd32b] duration-300'>
-                        <Link href={'/contactus'} className="block py-2 px-3 hover:mr-5 duration-300">تواصل معنا</Link>
+                        <Link href={'/%D8%AA%D9%88%D8%A7%D8%B5%D9%84-%D9%85%D8%B9%D9%86%D8%A7'} className="block py-2 px-3 hover:mr-5 duration-300">تواصل معنا</Link>
                     </li>
                     <li onClick={() => setIsOpen(!isOpen)} className='border-b-2 p-4 hover:bg-[#ffd32b] duration-300'>
                         <Link href={'/ourblog'} className="block py-2 px-3 hover:mr-5 duration-300">المدونة</Link>
