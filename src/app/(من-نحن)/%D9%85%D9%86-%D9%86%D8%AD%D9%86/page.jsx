@@ -1,5 +1,3 @@
-'use client'
-
 import Image from "next/image";
 import aboutUsOne from "@/app/assits/aboutus1.jpg";
 import aboutUsTwo from "@/app/assits/aboutus2.jpg";
@@ -9,15 +7,11 @@ import aboutUsFive from "@/app/assits/aboutus5.png";
 import aboutUsSix from "@/app/assits/aboutus6.png";
 import { FaCheckDouble, FaRegEye, FaHandsWash } from "react-icons/fa";
 import { ImProfile } from "react-icons/im";
-import { FaArrowDown, FaArrowUpLong } from "react-icons/fa6";
-import { useState } from "react";
 import Link from "next/link";
+import AboutUsSlice from "@/components/aboutUsSlice/aboutUsSlice";
 
 
-export default function AboutUs({ params }) {
-
-    // console.log(params);
-    const [showUl, setShowUl] = useState(false)
+export default function AboutUs() {
 
     return (<>
         <section className='pt-10'>
@@ -70,16 +64,7 @@ export default function AboutUs({ params }) {
                             <li className='font-bold'>2. الخدمات المالية (الحسابات، بوابات الدفع)</li>
                             <li className='font-bold'>3. تكامل الأعمال</li>
                             <li className='font-bold'>4. حلول اللوجستيات</li>
-                            <li onClick={() => setShowUl(!showUl)} className='relative border-b-2 pb-10'>
-                                <p className='font-bold cursor-pointer flex items-center justify-between'>5. تطوير الويب  {showUl ? <FaArrowUpLong /> : <FaArrowDown />}</p>
-                                <ul className={`${showUl ? 'relative' : 'hidden'} top-6 right-0 list-decimal mr-10 font-semibold`}>
-                                    <li>تطوير تطبيقات الهواتف المحمولة</li>
-                                    <li>تطوير المواقع الإلكترونية</li>
-                                    <li>التصميم الجرافيكي</li>
-                                    <li>التسويق الإلكتروني</li>
-                                    <li>إدارة وسائل التواصل الاجتماعي</li>
-                                </ul>
-                            </li>
+                            <AboutUsSlice />
                         </ul>
                     </div>
                     <div className='flex gap-5 mt-10'>
@@ -140,7 +125,7 @@ export default function AboutUs({ params }) {
                 <h3 className='text-3xl font-bold italic my-5'>فريق مبني على الخبرة</h3>
                 <p className='text-lg'>في ON DM، نحن ملتزمون بتحقيق نجاح أعمالك عبر الإنترنت من خلال حلول مبتكرة ومخصصة. تعاون معنا لتحقيق أهدافك التجارية والتفوق في العالم الرقمي.</p>
                 <p className='text-lg'>لمزيد من المعلومات أو لمناقشة احتياجات مشروعك، يرجى التواصل معنا:</p>
-                <button className=' bg-[#1f1d0d] text-lg py-5 px-7 rounded-lg text-white hover:scale-105 hover:bg-white hover:text-slate-800 hover:outline duration-300'><Link href={'/%D8%AA%D9%88%D8%A7%D8%B5%D9%84-%D9%85%D8%B9%D9%86%D8%A7'}>تواصل معنا</Link></button>
+                <Link href={'/%D8%AA%D9%88%D8%A7%D8%B5%D9%84-%D9%85%D8%B9%D9%86%D8%A7'}><button className=' bg-[#1f1d0d] text-lg py-5 px-7 rounded-lg text-white hover:scale-105 hover:bg-white hover:text-slate-800 hover:outline duration-300'>تواصل معنا</button></Link>
             </div>
 
             <div className='w-10/12 mx-auto flex flex-wrap gap-y-10 mt-20'>
