@@ -1,16 +1,13 @@
-'use client'
 
 import FilterOne from "@/components/filterOne/filterOne";
+import PlanImage from "@/components/planImage/planImage";
 import { plans } from "@/data/plans"
-import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
 
 export default function PlanDetails({ params }) {
 
-    const [openImg, setOpenImg] = useState(false)
     const keyword = params?.planName[0].replace(/%D8%AE%D8%B7%D8%A9-/g, '')
 
     const plan = plans?.filter((plann) => plann.link.replace(/خطة-/g, '') == keyword)
@@ -21,13 +18,6 @@ export default function PlanDetails({ params }) {
     // let data = await allData.json()
     // console.log(data);
 
-    useEffect(() => {
-        window.addEventListener('keydown', (e) => {
-            if (e.code === 'Escape') {
-                setOpenImg(false)
-            }
-        })
-    }, [])
 
     return (<>
         <section className="w-11/12 xl:w-8/12 mx-auto" >
@@ -48,14 +38,7 @@ export default function PlanDetails({ params }) {
                         </div>
                     </div>
                 </div>
-                <div className="w-full lg:w-1/2 order-1 lg:order-3">
-                    <div className="bg-[#dbd2b7] w-full p-7 rounded-lg rounded-r-none mx-auto overflow-hidden">
-                        <Image onClick={() => setOpenImg(true)} width={350} height={350} src={plan[0]?.img} alt={plan[0]?.name} className="mx-auto rounded-lg cursor-pointer hover:scale-125 duration-300 w-full h-full" />
-                    </div>
-                    <div onClick={() => setOpenImg(false)} className={`${openImg ? 'flex' : 'hidden'} fixed top-0 left-0 bottom-0 right-0 justify-center items-center bg-slate-800 cursor-pointer z-[60]`}>
-                        <Image width={600} height={600} src={plan[0]?.img} alt={plan[0]?.name} className="mx-auto rounded-lg mt-5" />
-                    </div>
-                </div>
+                <PlanImage id={keyword} />
             </div>
             <div className="my-5">
                 <p>{plan[0]?.disc}</p>
