@@ -18,7 +18,7 @@ export default function AboutUs() {
 
     return (<>
         <section className='pt-10'>
-            <div className='w-10/12 mx-auto flex flex-wrap gap-y-10'>
+            <div className='w-10/12 mx-auto flex flex-wrap gap-y-10 overflow-hidden'>
                 <motion.div initial={{ opacity: 0, x: 100 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ ease: "easeInOut", duration: .5 }} className='w-full lg:w-1/2'>
@@ -68,7 +68,7 @@ export default function AboutUs() {
                 </motion.div>
             </div>
 
-            <div className='w-10/12 mx-auto flex flex-wrap justify-between gap-y-10'>
+            <div className='w-10/12 mx-auto flex flex-wrap justify-between gap-y-10 overflow-hidden'>
                 <motion.div initial={{ opacity: 0, x: 100 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ ease: "easeInOut", duration: .5 }}
