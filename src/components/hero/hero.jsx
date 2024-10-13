@@ -36,7 +36,7 @@ export default function Hero() {
                         transition={{ ease: "easeInOut", duration: 0.75, delay: 1.5 }}>
                         <Image src={favIcon} alt="favicon" priority={true} width={70} height={70} className="h-auto w-20 lg:w-auto" />
                     </motion.div>
-                    <Image src={favIcon} alt="favicon" priority={true} width={70} height={70} className="hidden lg:block absolute bottom-5 -right-16 w-auto h-auto" />
+                    <Image src={favIcon} alt="favicon" priority={true} width={70} height={70} className="hidden lg:block absolute bottom-5 -right-16 w-auto h-auto animate-spin" />
                 </motion.div>
             </div>
         </section >

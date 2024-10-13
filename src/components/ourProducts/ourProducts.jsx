@@ -27,7 +27,11 @@ export default function OurProducts() {
             <h2 className='text-center text-5xl font-bold'>منتجاتنا المميزة</h2>
             <div className='flex flex-wrap my-10'>
                 {allProducts.map((product) =>
-                    <div key={product.id} className='w-full lg:w-1/2 xl:w-1/4 p-2'>
+                    <motion.div
+                        initial={{ opacity: 0, y: 100 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1 }}
+                        key={product.id} className='w-full lg:w-1/2 xl:w-1/4 p-2'>
                         <div className='shadow-2xl hover:shadow-slate-500 rounded-lg overflow-hidden duration-300'>
                             <Image alt={product.disc} src={product.img} className='rounded-lg rounded-b-none hover:scale-105 duration-300' />
                             <div className='p-5'>
@@ -44,7 +48,7 @@ export default function OurProducts() {
                                 <motion.div whileHover={{ x: -10, color: 'red' }}><Link href={`/${product.link}`} className='flex items-center justify-center gap-3 text-lg font-bold'>اعرف أكثر <FaLongArrowAltLeft /></Link></motion.div>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 )}
             </div>
 

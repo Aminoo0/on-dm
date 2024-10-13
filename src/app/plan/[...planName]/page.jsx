@@ -1,7 +1,9 @@
+'use client'
 
 import FilterOne from "@/components/filterOne/filterOne";
 import PlanImage from "@/components/planImage/planImage";
 import { plans } from "@/data/plans"
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -13,15 +15,13 @@ export default function PlanDetails({ params }) {
     const plan = plans?.filter((plann) => plann.link.replace(/خطة-/g, '') == keyword)
     // console.log(params.planName[0]);
 
-
-    // let allData = await fetch('https://jsonplaceholder.typicode.com/posts')
-    // let data = await allData.json()
-    // console.log(data);
-
-
     return (<>
         <section className="w-11/12 xl:w-8/12 mx-auto" >
-            <div className="flex flex-wrap gap-y-10 border-b-2 border-slate-500 border-opacity-15 w-full mx-auto py-10">
+            <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ type: 'Spring ', duration: .5 }}
+                className="flex flex-wrap gap-y-10 border-b-2 border-slate-500 border-opacity-15 w-full mx-auto py-10">
                 <div className="w-full lg:w-1/2 flex items-center lg:items-start justify-between flex-col bg-slate-100 rounded-md rounded-l-none p-5 order-2">
                     <div>
                         <h1 className="text-6xl font-bold mb-10">{plan[0]?.name}</h1>
@@ -39,8 +39,13 @@ export default function PlanDetails({ params }) {
                     </div>
                 </div>
                 <PlanImage id={keyword} />
-            </div>
-            <div className="my-5">
+            </motion.div>
+
+            <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+                className="my-5">
                 <p>{plan[0]?.disc}</p>
                 <ul className="my-5">
                     <li className="text-3xl my-5">المزايا الرئيسية:</li>
@@ -54,14 +59,18 @@ export default function PlanDetails({ params }) {
                         <li key={index} className="font-semibold my-3 list-disc">{moreDetail}</li>
                     )}
                 </ul>
-            </div>
+            </motion.div>
 
-            <div className="mt-10 flex flex-col items-center shadow-2xl hover:shadow-xl duration-300 shadow-slate-500 p-7 mx-auto w-full">
+            <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ type: 'Spring ', duration: .5 }}
+                className="mt-10 flex flex-col items-center shadow-2xl hover:shadow-xl duration-300 shadow-slate-500 p-7 mx-auto w-full">
                 <h2 className="text-4xl font-semibold text-nowrap">منتجات ذات صلة</h2>
                 <div className="flex flex-wrap justify-center w-full mx-auto mt-10">
                     <FilterOne params={keyword} />
                 </div>
-            </div>
+            </motion.div>
         </section >
     </>)
 }

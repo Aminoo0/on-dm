@@ -1,7 +1,9 @@
+'use client'
 
 import FilterTwo from "@/components/filterTwo/filterTwo";
 import ProductImage from "@/components/productImage/productImage";
 import { anotherProdcuts, anotherProdcutsThree, anotherProdcutsTwo } from "@/data/products";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -18,7 +20,11 @@ export default function ProductDetails({ params }) {
 
     return (<>
         <section className="w-11/12 xl:w-9/12 mx-auto" >
-            <div className="flex flex-wrap gap-y-10 border-b-2 border-slate-500 border-opacity-15 w-full mx-auto py-10">
+            <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ type: 'Spring ', duration: .5 }}
+                className="flex flex-wrap gap-y-10 border-b-2 border-slate-500 border-opacity-15 w-full mx-auto py-10">
                 <div className="w-full lg:w-2/3 flex items-center lg:items-start justify-between flex-col bg-slate-100 rounded-md rounded-l-none p-5 order-2">
                     <div>
                         <h1 className="text-3xl font-bold mb-10 text-violet-900">{product[0]?.name || productTwo[0]?.name || productThree[0]?.name}</h1>
@@ -36,7 +42,7 @@ export default function ProductDetails({ params }) {
                     </div>
                 </div>
                 <ProductImage id={keyword} />
-            </div>
+            </motion.div>
             <div className="my-5">
                 <p className='my-10 font-semibold text-3xl italic text-violet-950'>{product[0]?.disc || productTwo[0]?.disc || productThree[0]?.disc}</p>
                 <ul className="my-5 mt-20">
@@ -69,12 +75,16 @@ export default function ProductDetails({ params }) {
                 </ul>
             </div>
 
-            <div className="mt-10 flex flex-col items-center shadow-2xl hover:shadow-xl duration-300 shadow-slate-500 p-7 mx-auto w-full">
+            <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ type: 'Spring ', duration: .5 }}
+                className="mt-10 flex flex-col items-center shadow-2xl hover:shadow-xl duration-300 shadow-slate-500 p-7 mx-auto w-full">
                 <h2 className="text-4xl font-semibold text-nowrap">منتجات ذات صلة</h2>
                 <div className="flex flex-wrap justify-evenly w-full mx-auto mt-10">
                     <FilterTwo params={keyword} />
                 </div>
-            </div>
+            </motion.div>
         </section >
     </>)
 }

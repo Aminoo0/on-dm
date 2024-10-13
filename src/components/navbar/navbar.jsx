@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseOutline } from "react-icons/io5";
 import { IoMdArrowDropdown } from "react-icons/io";
+import { FaArrowUpLong } from "react-icons/fa6";
 import logo from '../../app/assits/mainLogo.png'
 import egyptLogo from '../../app/assits/egyptLogo.png'
 import Image from 'next/image';
@@ -13,6 +14,7 @@ import Image from 'next/image';
 export default function Navbar() {
 
     const [isOpen, setIsOpen] = useState(false)
+    const [arrow, setArrow] = useState(false)
     const [isOpenServices, setIsOpenServices] = useState(false)
     const [isOpenPlans, setIsOpenPlans] = useState(false)
     const [navHidden, setNavHidden] = useState(false)
@@ -26,6 +28,18 @@ export default function Navbar() {
             setNavHidden(false)
         }
     })
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) {
+            setArrow(true)
+        } else {
+            setArrow(false)
+        }
+    })
+
+    let goUp = () => {
+        window.scroll(0, 0)
+    }
 
     const showMenu = {
         enter: {
@@ -123,7 +137,7 @@ export default function Navbar() {
                             <Link href={'/%D8%AA%D9%88%D8%A7%D8%B5%D9%84-%D9%85%D8%B9%D9%86%D8%A7'} className="block py-2 px-3 text-gray-900">تواصل معنا</Link>
                         </li>
                         <li>
-                            <Link href={'/ourblog'} className="block py-2 px-3 text-gray-900">المدونة</Link>
+                            <Link href={'/on-dm-blog'} className="block py-2 px-3 text-gray-900">المدونة</Link>
                         </li>
                     </ul>
                 </div>
@@ -175,11 +189,14 @@ export default function Navbar() {
                         <Link href={'/%D8%AA%D9%88%D8%A7%D8%B5%D9%84-%D9%85%D8%B9%D9%86%D8%A7'} className="block py-2 px-3 hover:mr-5 duration-300">تواصل معنا</Link>
                     </li>
                     <li onClick={() => setIsOpen(!isOpen)} className='border-b-2 p-4 hover:bg-[#ffd32b] duration-300'>
-                        <Link href={'/ourblog'} className="block py-2 px-3 hover:mr-5 duration-300">المدونة</Link>
+                        <Link href={'/on-dm-blog'} className="block py-2 px-3 hover:mr-5 duration-300">المدونة</Link>
                     </li>
                 </motion.ul>
             </nav>
             }
         </AnimatePresence>
+
+        <div onClick={goUp} className={`${arrow ? 'bottom-8' : '-bottom-20'} fixed duration-300 right-8 bg-[#ffd32b] rounded-full p-3 z-50 cursor-pointer animate-bounce hover:animate-none`}><FaArrowUpLong /></div>
+
     </>)
 }

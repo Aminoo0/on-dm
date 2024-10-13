@@ -18,7 +18,7 @@ export default function AboutusCaption() {
             <div className='w-full lg:w-1/2 flex flex-wrap mt-10 lg:mt-0'>
                 <div className='w-1/2 p-1 lg:p-3 order-1'>
                     <div className='p-2 lg:p-5 shadow-xl rounded-lg hover:bg-[#ffd32b] hover:scale-105 duration-300'>
-                        <Image alt='about us' width={60} height={60} src={imgOne} />
+                        <Image alt='about us' width={60} height={60} src={imgOne} className='animate-spin' />
                         <h2 className='font-bold my-2 text-xl'>تصميم مواقع</h2>
                         <p>حلول تصميم تلبي تطلعاتك ومتطلباتك تجعلك متميزًا في سوقك</p>
                     </div>

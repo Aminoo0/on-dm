@@ -1,3 +1,6 @@
+'use client'
+
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaRegCheckCircle } from "react-icons/fa";
 
@@ -28,7 +31,11 @@ export default function OurPlans() {
             <h2 className='text-5xl text-center font-bold my-5'>خطط ONDM الشهرية</h2>
             <div className="flex flex-wrap gap-y-5">
                 {allPlans.map((plan) =>
-                    <div key={plan.plan} className="w-full md:w-1/2 xl:w-1/4 px-2">
+                    <motion.div
+                        initial={{ opacity: 0, y: 100 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1 }}
+                        key={plan.plan} className="w-full md:w-1/2 xl:w-1/4 px-2">
                         <div className='shadow-xl hover:shadow-slate-500 flex flex-col justify-between rounded-lg py-5 h-[600px] hover:scale-105 duration-300'>
                             <div>
                                 <h2 className='font-bold text-xl text-center my-5 text-[#ffd32b]'>{plan.plan}</h2>
@@ -37,14 +44,14 @@ export default function OurPlans() {
                                     <h2 className='line-through'>{plan.oldPrice}ر.س</h2>
                                 </div>
                                 <ul className="p-3 flex justify-center flex-wrap flex-col gap-y-5">
-                                    {plan.details.map((li) => <>
-                                        <li className="flex gap-x-3 items-center border-b border-slate-700 border-opacity-10 pb-1 hover:mr-5 duration-300"><FaRegCheckCircle color="#ffd32b" />{li}</li>
-                                    </>)}
+                                    {plan.details.map((li, index) =>
+                                        <li key={index} className="flex gap-x-3 items-center border-b border-slate-700 border-opacity-10 pb-1 hover:mr-5 duration-300"><FaRegCheckCircle color="#ffd32b" />{li}</li>
+                                    )}
                                 </ul>
                             </div>
                             <Link href={`/plan/${plan.link}`} className={`${plan.isBlack ? 'bg-black hover:bg-transparent hover:text-black outline outline-1' : 'bg-[#ffd32b] hover:bg-black hover:text-[#ffd32b] hover:outline-[#ffd32b] outline outline-1 outline-black'} py-3 w-1/2 text-center text-white self-center px-5 rounded-lg duration-300`}>اكتشف المزيد</Link>
                         </div>
-                    </div>
+                    </motion.div>
                 )}
             </div>
         </section >

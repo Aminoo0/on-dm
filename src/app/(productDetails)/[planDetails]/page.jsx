@@ -1,5 +1,7 @@
+'use client'
 
 import { products } from "@/data/products";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -10,7 +12,7 @@ export default function PlanDetails({ params }) {
 
     let product = products?.filter((link) => link.id == params.planDetails)
     // console.log(params);
-    
+
 
     if (product[0]?.id !== params.planDetails) {
         return notFound()
@@ -18,9 +20,13 @@ export default function PlanDetails({ params }) {
 
     return (
         <section>
-            <div className='w-11/12 lg:w-3/4 mx-auto mt-10 pt-10'>
+            <motion.div
+                initial={{ opacity: 0, scale: .8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ type: 'Spring ', duration: .5 }}
+                className='w-11/12 lg:w-3/4 mx-auto mt-10 pt-10'>
                 <Image src={product[0]?.img.src} width={500} height={500} alt="plan Details" className="rounded-md w-full h-auto" />
-            </div>
+            </motion.div>
             <div className='w-10/12 lg:w-8/12 mx-auto'>
                 <h1 className='text-center text-3xl mt-36 font-bold'>{product[0]?.title}</h1>
                 <h2 className='font-semibold text-lg my-5'>{product[0]?.h1}</h2>
@@ -50,7 +56,11 @@ export default function PlanDetails({ params }) {
             </div>
             {!product[0].hidden ? <div className='mt-32 bg-slate-100 p-5'>
                 <h2 className='text-5xl font-semibold text-center my-10'>{product[0].secTitle}</h2>
-                <div className='flex flex-wrap justify-center items-center gap-0 gap-y-7 w-full xl:w-10/12 mx-auto'>
+                <motion.div
+                    initial={{ opacity: 0, y: 100 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ type: 'Spring ', duration: .5 }}
+                    className='flex flex-wrap justify-center items-center gap-0 gap-y-7 w-full xl:w-10/12 mx-auto'>
                     <div className="w-full md:w-full lg:w-1/3 px-2">
                         <div className='shadow-xl bg-white hover:shadow-slate-500 flex flex-col justify-between rounded-lg py-5 hover:scale-105 duration-300'>
                             <div>
@@ -103,7 +113,7 @@ export default function PlanDetails({ params }) {
                             <Link href={`/product/${product[0].anotherLink3}`} className={`${product[0].anotherLink3 ? 'bg-black hover:bg-transparent hover:text-black outline outline-1' : 'bg-[#ffd32b] hover:bg-black hover:text-[#ffd32b] hover:outline-[#ffd32b] outline outline-1 outline-black'} py-3 w-1/2 text-center text-white self-center px-5 rounded-lg duration-300`}>اكتشف المزيد</Link>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div> : null
             }
         </section >
