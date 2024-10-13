@@ -2,7 +2,7 @@
 
 import { AnimatePresence, color, motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseOutline } from "react-icons/io5";
 import { IoMdArrowDropdown } from "react-icons/io";
@@ -29,13 +29,15 @@ export default function Navbar() {
         }
     })
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 200) {
-            setArrow(true)
-        } else {
-            setArrow(false)
-        }
-    })
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                setArrow(true)
+            } else {
+                setArrow(false)
+            }
+        })
+    }, [])
 
     let goUp = () => {
         window.scroll(0, 0)
