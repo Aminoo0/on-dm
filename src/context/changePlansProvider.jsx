@@ -1,23 +1,21 @@
 'use client'
 
+import { blogs } from '@/data/blog';
 import { createContext, useContext, useState } from 'react';
 
-export const PlanTwoHiddenContext = createContext({
-    isPlansOneHidden: false,
-    test: () => { }
-});
+const AppContext = createContext(undefined)
 
-export function PlansTwoHiddenProvider({ children }) {
-    const [isPlansOneHidden, setIsPlansOneHidden] = useState();
-    let test = () => {
-        setIsPlansOneHidden(true)
-    }
+export function AppWrapper({ children }) {
+
+    let [makeBlog, setMakeBlog] = useState(blogs);
 
     return (
-        <PlanTwoHiddenContext.Provider value={{ isPlansOneHidden, setIsPlansOneHidden, test }}>
+        <AppContext.Provider value={{ makeBlog, setMakeBlog }}>
             {children}
-        </PlanTwoHiddenContext.Provider>
+        </AppContext.Provider>
     );
 }
 
-export const usePlanTwoHiddenContext = () => useContext(PlanTwoHiddenContext)
+export function useAppContext() {
+    return useContext(AppContext)
+}
