@@ -32,7 +32,7 @@ export default function OurProducts() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1 }}
                         key={product.id} className='w-full lg:w-1/2 xl:w-1/4 p-2'>
-                        <div className='shadow-2xl hover:shadow-slate-500 rounded-lg overflow-hidden duration-300'>
+                        <Link href={`/${product.link}`} className='shadow-2xl hover:shadow-slate-500 rounded-lg overflow-hidden duration-300'>
                             <Image alt={product.disc} src={product.img} className='rounded-lg rounded-b-none hover:scale-105 duration-300' />
                             <div className='p-5'>
                                 <div className='flex items-center justify-between my-3'>
@@ -45,9 +45,9 @@ export default function OurProducts() {
                                     <div className='flex items-center gap-1 text-sm font-semibold text-nowrap'>أداء متفوق <FaRocket color='#ffd32b' size={20} /></div>
                                 </div>
                                 <p className='font-bold text-xl my-5 px-4'>{product.disc}</p>
-                                <motion.div whileHover={{ x: -10, color: 'red' }}><Link href={`/${product.link}`} className='flex items-center justify-center gap-3 text-lg font-bold'>اعرف أكثر <FaLongArrowAltLeft /></Link></motion.div>
+                                <motion.div whileHover={{ x: -10, color: 'red' }}><div className='flex items-center justify-center gap-3 text-lg font-bold'>اعرف أكثر <FaLongArrowAltLeft /></div></motion.div>
                             </div>
-                        </div>
+                        </Link>
                     </motion.div>
                 )}
             </div>
