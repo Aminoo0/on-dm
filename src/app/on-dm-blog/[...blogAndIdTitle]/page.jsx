@@ -12,7 +12,7 @@ import { FcBusinessContact, FcAbout } from "react-icons/fc";
 import { motion } from "framer-motion";
 
 
-export default function page() {
+export default function BlogDetails() {
 
     const [isOpenServices, setIsOpenServices] = useState(false)
     const [isOpenPlans, setIsOpenPlans] = useState(false)
