@@ -12,6 +12,7 @@ import { FcBusinessContact, FcAbout } from "react-icons/fc";
 import { motion } from "framer-motion";
 
 
+
 export default function BlogDetails() {
 
     const [isOpenServices, setIsOpenServices] = useState(false)
@@ -96,10 +97,6 @@ export default function BlogDetails() {
                             <li key={detail} className='my-3'>{detail}</li>
                         )}
                     </ul>
-                    {/* <div className='flex gap-5'>
-                        <Link href={`/on-dm-blog/${blog[0].id > 1 ? `${blog[0].id - 1}` : `${blog[0].id}`}/${blog[0].title}`} >prev</Link >
-                        <Link href={`/on-dm-blog/${blog[0].id < blogs.length ? `${blog[0].id + 1}` : `${blog[0].id}`}/${blog[0].title}}`} >next</Link>
-                    </div> */}
                 </div>
                 <div className='lg:w-2/4 p-5 flex flex-col gap-y-10'>
                     <ul className='hidden lg:flex flex-col items-start justify-start w-1/2 border rounded-lg'>
