@@ -24,7 +24,7 @@ export default function BlogDetails() {
 
     useEffect(() => {
         blog[0].title
-    }, [blog[0].id])
+    }, [])
 
     const show = {
         enter: {
