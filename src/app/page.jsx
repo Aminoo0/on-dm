@@ -45,7 +45,7 @@ const jsonLdHome = [
     inLanguage: "en",
     potentialAction: {
       "@type": "SearchAction",
-      target: "http://example.com/search?q={search_term_string}",
+      target: "https://on-dm.com/search?q={search_term_string}",
       "query-input": "required name=search_term_string",
     },
   },
