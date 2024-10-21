@@ -1,5 +1,3 @@
-import Footer from '@/components/footer/footer';
-import Navbar from '@/components/navbar/navbar';
 import { products } from '@/data/products';
 
 
@@ -18,11 +16,9 @@ export async function generateMetadata({ params }) {
 
 export default function ProductsLayout({ children }) {
     return (<section>
-        <Navbar />
         <div className='mt-[75px] lg:mt-[88px]'>
             {children}
         </div>
-        <Footer />
     </section>
     );
 }
