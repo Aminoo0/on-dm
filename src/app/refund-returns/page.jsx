@@ -1,7 +1,7 @@
 
 export default function refundReturns() {
     return (
-        <section className='w-8/12 mx-auto'>
+        <section className='w-10/12 lg:w-8/12 mx-auto'>
             <h1 className='text-5xl font-bold pt-10'>سياسة الاسترجاع</h1>
             <h2 className='font-semibold text-xl my-5'>مقدمة</h2>
             <p>تلتزم ON DM بتقديم خدمات عالية الجودة لعملائنا. ومع ذلك، نظرًا لطبيعة خدماتنا، فإن سياسة الاسترجاع لدينا تخضع لشروط محددة. نرجو منكم قراءة هذه السياسة بعناية قبل التعاقد معنا.</p>

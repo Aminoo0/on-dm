@@ -1,7 +1,7 @@
 
 export default function HowWorking() {
     return (
-        <section className='w-8/12 mx-auto'>
+        <section className='w-10/12 lg:w-8/12 mx-auto'>
             <h1 className='text-5xl font-bold pt-10'>كيف نعمل</h1>
             <h2 className='font-semibold text-xl my-5'>عملية العمل لدينا :</h2>
             <p>نحن في ON DM نتبع عملية عمل منظمة ومبنية على الكفاءة لضمان تقديم خدمات عالية الجودة وتحقيق أهداف مشاريع عملائنا.
