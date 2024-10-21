@@ -58,7 +58,7 @@ const jsonLdHome = [
     "logo": "",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+966566284570",
+      "telephone": "+201508307467",
       "contactType": "customer service",
       "areaServed": "SA",
       "availableLanguage": ["en", "Arabic"]
@@ -78,7 +78,7 @@ const jsonLdHome = [
     "description": "مصممة لمقدمي الخدمات والعلامات التجارية الاحترافية، تقدم خطة ON Track من ON DM حزمة شاملة مصممة لرفع مستوى وجودك على الإنترنت وتبسيط تفاعلات العملاء. من خلال التركيز على بناء موقع ويب احترافي واستغلال خدمات جوجل، تمكن هذه الخطة من تعزيز رؤيتك على الإنترنت وزيادة التفاعل مع العملاء.",
     "brand": {
       "@type": "Brand",
-      "name": "Item"
+      "name": "On-Dm"
     },
     "sku": "1234",
     "offers": {
@@ -92,10 +92,10 @@ const jsonLdHome = [
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.5",
+      "ratingValue": "",
       "bestRating": "5",
       "worstRating": "1",
-      "ratingCount": "50"
+      "ratingCount": ""
     }
   },
   {
@@ -106,7 +106,7 @@ const jsonLdHome = [
     "description": "تم تصميم خطة ON Air من ON DM خصيصًا للشركات التي تسعى لزيادة وجودها على منصات وسائل التواصل الاجتماعي، حيث تقدم خدمات تسويقية شاملة مع تطوير هوية بصرية للعلامة التجارية. تهدف هذه الخطة إلى تعزيز رؤيتك وتفاعلك على مختلف منصات التواصل الاجتماعي.",
     "brand": {
       "@type": "Brand",
-      "name": "Item"
+      "name": "On-Dm"
     },
     "sku": "2134",
     "offers": {
@@ -120,10 +120,10 @@ const jsonLdHome = [
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.5",
+      "ratingValue": "",
       "bestRating": "5",
       "worstRating": "1",
-      "ratingCount": "50"
+      "ratingCount": ""
     }
   },
   {
@@ -134,7 +134,7 @@ const jsonLdHome = [
     "description": "تهدف خطة ON Phone من ON DM إلى توفير حل شامل للشركات الراغبة في تبسيط تفاعلاتها مع العملاء وتعزيز الكفاءة التشغيلية من خلال إدارة فعالة لعلاقات العملاء (CRM) وخدمات دعم الهاتف المخصصة. تم تصميم هذه الخطة الشاملة لتمكين الشركات من الحصول على الأدوات والموارد اللازمة لإدارة الاستفسارات العملاء، والحجوزات، وعمليات الشراء بسلاسة.",
     "brand": {
       "@type": "Brand",
-      "name": "Item"
+      "name": "On-Dm"
     },
     "sku": "3124",
     "offers": {
@@ -148,10 +148,10 @@ const jsonLdHome = [
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.5",
+      "ratingValue": "",
       "bestRating": "5",
       "worstRating": "1",
-      "ratingCount": "50"
+      "ratingCount": ""
     }
   },
   {
@@ -162,7 +162,7 @@ const jsonLdHome = [
     "description": "تقدم خطة ON DM حلاً شاملاً يجمع بين مزايا خطة ON Track وخطة ON Air وخطة ON Phone، لتوفير الحلول المتكاملة للتسويق الرقمي، وتطوير الهوية، وإدارة علاقات العملاء. تم تصميم هذه الخطة الشاملة لتحقيق أقصى استفادة من الوجود الرقمي وتعزيز الجاذبية والفعالية التشغيلية لعملك.",
     "brand": {
       "@type": "Brand",
-      "name": "Item"
+      "name": "On-Dm"
     },
     "sku": "4123",
     "offers": {
@@ -176,10 +176,10 @@ const jsonLdHome = [
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.5",
+      "ratingValue": "",
       "bestRating": "5",
       "worstRating": "1",
-      "ratingCount": "50"
+      "ratingCount": ""
     }
   }
 ];
