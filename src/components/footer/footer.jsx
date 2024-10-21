@@ -25,12 +25,12 @@ export default function Footer() {
                 <div className="w-full lg:w-1/3 lg:flex flex-col items-center">
                     <h3 className="mb-10 ml-20 text-3xl">روابط تهمك</h3>
                     <ul className="text-center flex flex-col gap-y-3 w-2/4">
-                        <li className="flex items-center gap-3 hover:mr-3 hover:text-[#ffd32b] duration-300"><FaArrowLeft color="#ffd32b" /> كيف نعمل</li>
-                        <li className="flex items-center gap-3 hover:mr-3 hover:text-[#ffd32b] duration-300"><FaArrowLeft color="#ffd32b" /> تواصل معنا</li>
-                        <li className="flex items-center gap-3 hover:mr-3 hover:text-[#ffd32b] duration-300"><FaArrowLeft color="#ffd32b" /> الشروط والأحكام</li>
-                        <li className="flex items-center gap-3 hover:mr-3 hover:text-[#ffd32b] duration-300"><FaArrowLeft color="#ffd32b" /> سياسة الخصوصية</li>
-                        <li className="flex items-center gap-3 hover:mr-3 hover:text-[#ffd32b] duration-300"><FaArrowLeft color="#ffd32b" /> سياسة الإسترجاع</li>
-                        <li className="flex items-center gap-3 hover:mr-3 hover:text-[#ffd32b] duration-300"><FaArrowLeft color="#ffd32b" /> الأسئلة الشائعة</li>
+                        <Link href={'/how-working'} className="flex items-center gap-3 hover:mr-3 hover:text-[#ffd32b] duration-300"><FaArrowLeft color="#ffd32b" /> كيف نعمل</Link>
+                        <Link href={'/%D8%AA%D9%88%D8%A7%D8%B5%D9%84-%D9%85%D8%B9%D9%86%D8%A7'} className="flex items-center gap-3 hover:mr-3 hover:text-[#ffd32b] duration-300"><FaArrowLeft color="#ffd32b" /> تواصل معنا</Link>
+                        <Link href={'/'} className="flex items-center gap-3 hover:mr-3 hover:text-[#ffd32b] duration-300"><FaArrowLeft color="#ffd32b" /> الشروط والأحكام</Link>
+                        <Link href={'/privacy-policy'} className="flex items-center gap-3 hover:mr-3 hover:text-[#ffd32b] duration-300"><FaArrowLeft color="#ffd32b" /> سياسة الخصوصية</Link>
+                        <Link href={'/refund-returns'} className="flex items-center gap-3 hover:mr-3 hover:text-[#ffd32b] duration-300"><FaArrowLeft color="#ffd32b" /> سياسة الإسترجاع</Link>
+                        <Link href={'/'} className="flex items-center gap-3 hover:mr-3 hover:text-[#ffd32b] duration-300"><FaArrowLeft color="#ffd32b" /> الأسئلة الشائعة</Link>
                     </ul>
                 </div>
                 <div className="w-full lg:w-1/3">
