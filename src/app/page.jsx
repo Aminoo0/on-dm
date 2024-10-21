@@ -90,13 +90,7 @@ const jsonLdHome = [
       "availability": "https://schema.org/InStock",
       "itemCondition": "https://schema.org/NewCondition"
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "",
-      "bestRating": "5",
-      "worstRating": "1",
-      "ratingCount": ""
-    }
+    
   },
   {
     "@context": "https://schema.org/",
@@ -118,13 +112,7 @@ const jsonLdHome = [
       "availability": "https://schema.org/InStock",
       "itemCondition": "https://schema.org/NewCondition"
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "",
-      "bestRating": "5",
-      "worstRating": "1",
-      "ratingCount": ""
-    }
+    
   },
   {
     "@context": "https://schema.org/",
@@ -146,13 +134,7 @@ const jsonLdHome = [
       "availability": "https://schema.org/InStock",
       "itemCondition": "https://schema.org/NewCondition"
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "",
-      "bestRating": "5",
-      "worstRating": "1",
-      "ratingCount": ""
-    }
+    
   },
   {
     "@context": "https://schema.org/",
@@ -174,13 +156,7 @@ const jsonLdHome = [
       "availability": "https://schema.org/InStock",
       "itemCondition": "https://schema.org/NewCondition"
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "",
-      "bestRating": "5",
-      "worstRating": "1",
-      "ratingCount": ""
-    }
+    
   }
 ];
 
