@@ -36,20 +36,20 @@ export default function Footer() {
                 <div className="w-full lg:w-1/3">
                     <h3 className="mb-10 ml-20 text-3xl">تواصل معنا</h3>
                     <ul className="text-center flex flex-col gap-y-3 text-lg">
-                        <li className="flex items-center gap-3 hover:mr-3 hover:text-[#ffd32b] duration-300"><FaPhone color="#ffd32b" /> +966566284570</li>
-                        <li className="flex items-center gap-3 hover:mr-3 hover:text-[#ffd32b] duration-300"><FaWhatsapp color="#ffd32b" /> +966566284570</li>
-                        <li className="flex items-center gap-3 hover:mr-3 hover:text-[#ffd32b] duration-300"><MdEmail color="#ffd32b" /> info@on-dm.com</li>
-                        <li className="flex items-center gap-3 hover:mr-3 hover:text-[#ffd32b] duration-300"><FaLocationArrow color="#ffd32b" /> مكتب رقم 348، مول مزار، الجيزة - مصر
-                        </li>
+                        <Link href={'tel:+966566284570'} className="flex items-center gap-3 hover:mr-3 hover:text-[#ffd32b] duration-300"><FaPhone color="#ffd32b" /> +966566284570</Link>
+                        <Link href={'https://wa.me/966566284570'} className="flex items-center gap-3 hover:mr-3 hover:text-[#ffd32b] duration-300"><FaWhatsapp color="#ffd32b" /> +966566284570</Link>
+                        <Link href={'mailto:info@on-dm.com'} className="flex items-center gap-3 hover:mr-3 hover:text-[#ffd32b] duration-300"><MdEmail color="#ffd32b" /> info@on-dm.com</Link>
+                        <Link href={''} className="flex items-center gap-3 hover:mr-3 hover:text-[#ffd32b] duration-300"><FaLocationArrow color="#ffd32b" /> مكتب رقم 348، مول مزار، الجيزة - مصر
+                        </Link>
                     </ul>
                 </div>
             </div>
             <div className="text-center mt-20 border-t-2 border-slate-300 border-opacity-15 pt-16">
                 <div className="flex justify-center gap-5 mb-5">
-                    <FaFacebook size={20} className="cursor-pointer text-slate-400 hover:text-[#ffd32b] duration-300" />
-                    <FaYoutube size={20} className="cursor-pointer text-slate-400 hover:text-[#ffd32b] duration-300" />
-                    <FaInstagram size={20} className="cursor-pointer text-slate-400 hover:text-[#ffd32b] duration-300" />
-                    <FaLinkedin size={20} className="cursor-pointer text-slate-400 hover:text-[#ffd32b] duration-300" />
+                    <Link href={'https://www.facebook.com/people/ONDM/61556612142969/'} target="_blank"><FaFacebook size={20} className="cursor-pointer text-slate-400 hover:text-[#ffd32b] duration-300" /></Link>
+                    <Link href={'https://www.youtube.com/channel/UCwZ5Qz-GGbPIqvrbQVAXwcg'} target="_blank"><FaYoutube size={20} className="cursor-pointer text-slate-400 hover:text-[#ffd32b] duration-300" /></Link>
+                    <Link href={'https://www.instagram.com/ondm_official/'} target="_blank"><FaInstagram size={20} className="cursor-pointer text-slate-400 hover:text-[#ffd32b] duration-300" /></Link>
+                    <Link href={'https://www.linkedin.com/in/mohamed-abdullah-580490311/'} target="_blank"><FaLinkedin size={20} className="cursor-pointer text-slate-400 hover:text-[#ffd32b] duration-300" /></Link>
                 </div>
                 <h3>Copyright © 2023 <Link href={'/'} className="text-[#ffd32b] hover:scale-105 duration-300">ON DM.</Link> All Rights Reserved</h3>
             </div>

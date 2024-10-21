@@ -8,20 +8,20 @@ export default function OurPlans() {
 
     const allPlans = [
         {
-            id: 1, plan: 'خطة ON Track', price: 2100, oldPrice: 4200, isBlack: true, link: 'خطة-on-track',
+            id: 1, plan: 'خطة ON Track', price: 2940, oldPrice: 4200, isBlack: true, link: 'خطة-on-track',
             details: [' 1. موقع ويب احترافي', ' 2. تكامل خدمات جوجل', ' 3. تطوير الهوية التجارية', ' 4. تحليلات وتحسين محركات البحث', ' 5. بوابات الدفع والسياسات'
                 , ' 6. مدير الحساب', ' 7. الدعم على مدار الساعة']
         },
         {
-            id: 2, plan: 'خطة ON Air', price: 2999, oldPrice: 4999, isBlack: false, link: 'خطة-on-air',
+            id: 2, plan: 'خطة ON Air', price: 3500, oldPrice: 4999, isBlack: false, link: 'خطة-on-air',
             details: [' 1. خطة تسويقية على وسائل التواصل الاجتماعي', ' 2. تطوير الهوية البصرية', ' 3. إعداد المنصات', ' 4. المنشورات والريلز اليومية', ' 5. إدارة الإعلانات']
         },
         {
-            id: 3, plan: 'خطة ON Phone', price: 5000, oldPrice: 10000, isBlack: true, link: 'خطة-on-phone',
+            id: 3, plan: 'خطة ON Phone', price: 7000, oldPrice: 10000, isBlack: true, link: 'خطة-on-phone',
             details: [' 1. نظام إدارة علاقات العملاء (CRM)', ' 2. التعاون لمدة 8 ساعات في 6 أيام', ' 3. عمليات الحجز/الشراء', '4. التقارير اليومية', '5. الاجتماعات الأسبوعية', '6. الأهداف الشهرية']
         },
         {
-            id: 4, plan: 'خطة ON DM', price: 8999, oldPrice: 20000, isBlack: false, link: 'خطة-on-dm',
+            id: 4, plan: 'خطة ON DM', price: 14000, oldPrice: 20000, isBlack: false, link: 'خطة-on-dm',
             details: ['1. تكامل خطة ON Track', '2. تعزيز خطة ON Air', '3. تكامل خطة ON Phone']
         },
     ]

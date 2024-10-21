@@ -9,7 +9,7 @@ export default function AboutusCaption() {
     return (
         <section className='flex flex-wrap p-5 pb-20 pt-10 2xl:px-52'>
             <div className='w-full lg:w-1/2'>
-                <h2 className='text-violet-600 font-semibold pb-3'>نهج إبداعي يجسد نجاحك على أرض الواقع بداية من تحويل فكرتك لموقع إلكتروني إلى تسويق فكرتك وتحويلها لأرباح.</h2>
+                <h2 className='font-semibold pb-3'>نهج إبداعي يجسد نجاحك على أرض الواقع بداية من تحويل فكرتك لموقع إلكتروني إلى تسويق فكرتك وتحويلها لأرباح.</h2>
                 <div className='relative hover:scale-105 duration-300'>
                     <Image className='w-11/12 z-40 relative rounded-xl' src={aboutusCaption} alt='about us' />
                     <div className='after:bg-[#ffd32b] after:absolute after:top-[7%] after:left-[5%] after:content-[""] after:w-11/12 after:h-full after:rounded-xl'></div>

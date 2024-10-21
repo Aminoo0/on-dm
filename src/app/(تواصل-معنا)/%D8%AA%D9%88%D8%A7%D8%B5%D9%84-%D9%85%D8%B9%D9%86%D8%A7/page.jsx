@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { FaPhone, FaLocationArrow, FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
@@ -17,33 +18,39 @@ export default function ContactUs() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ ease: "easeInOut", duration: 1 }} className='font-semibold my-10'>نحن نهتم بملاحظاتك واستفساراتك ونسعد بمساعدتك فيما يتعلق بخدماتنا ومنتجاتنا</motion.p>
           <div className='flex flex-col gap-5'>
-            <motion.div initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ ease: "easeInOut", duration: 1, delay: .5 }} className='flex items-center gap-x-5 justify-start mr-10'>
-              <FaPhone size={50} className='bg-[#ffd32b] p-3 rounded-md hover:scale-105 hover:bg-transparent hover:outline hover:outline-1 hover:outline-slate-950 hover:text-emerald-600 duration-300' />
-              <div>
-                <h4 className='font-bold text-lg'>اتصل بنا</h4>
-                <h4 className='font-semibold'>+966566284570</h4>
-              </div>
-            </motion.div>
-            <motion.div initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ ease: "easeInOut", duration: 1, delay: 1 }} className='flex items-center gap-x-5 justify-start mr-10'>
-              <FaWhatsapp size={50} className='bg-[#ffd32b] p-3 rounded-md hover:scale-105 hover:bg-transparent hover:outline hover:outline-1 hover:outline-slate-950 hover:text-emerald-600 duration-300' />
-              <div>
-                <h4 className='font-bold text-lg'>واتس آب</h4>
-                <h4 className='font-semibold'>+966566284570</h4>
-              </div>
-            </motion.div>
-            <motion.div initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ ease: "easeInOut", duration: 1, delay: 1.5 }} className='flex items-center gap-x-5 justify-start mr-10'>
-              <MdEmail size={50} className='bg-[#ffd32b] p-3 rounded-md hover:scale-105 hover:bg-transparent hover:outline hover:outline-1 hover:outline-slate-950 hover:text-emerald-600 duration-300' />
-              <div>
-                <h4 className='font-bold text-lg'>البريد الإلكتروني</h4>
-                <h4 className='font-semibold'>info@on-dm.com</h4>
-              </div>
-            </motion.div>
+            <Link href={'tel:+966566284570'}>
+              <motion.div initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ ease: "easeInOut", duration: 1, delay: .5 }} className='flex items-center gap-x-5 justify-start mr-10'>
+                <FaPhone size={50} className='bg-[#ffd32b] p-3 rounded-md hover:scale-105 hover:bg-transparent hover:outline hover:outline-1 hover:outline-slate-950 hover:text-emerald-600 duration-300' />
+                <div>
+                  <h4 className='font-bold text-lg'>اتصل بنا</h4>
+                  <h4 className='font-semibold'>+966566284570</h4>
+                </div>
+              </motion.div>
+            </Link>
+            <Link href={'https://wa.me/966566284570'}>
+              <motion.div initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ ease: "easeInOut", duration: 1, delay: 1 }} className='flex items-center gap-x-5 justify-start mr-10'>
+                <FaWhatsapp size={50} className='bg-[#ffd32b] p-3 rounded-md hover:scale-105 hover:bg-transparent hover:outline hover:outline-1 hover:outline-slate-950 hover:text-emerald-600 duration-300' />
+                <div>
+                  <h4 className='font-bold text-lg'>واتس آب</h4>
+                  <h4 className='font-semibold'>+966566284570</h4>
+                </div>
+              </motion.div>
+            </Link>
+            <Link href={'mailto:info@on-dm.com'}>
+              <motion.div initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ ease: "easeInOut", duration: 1, delay: 1.5 }} className='flex items-center gap-x-5 justify-start mr-10'>
+                <MdEmail size={50} className='bg-[#ffd32b] p-3 rounded-md hover:scale-105 hover:bg-transparent hover:outline hover:outline-1 hover:outline-slate-950 hover:text-emerald-600 duration-300' />
+                <div>
+                  <h4 className='font-bold text-lg'>البريد الإلكتروني</h4>
+                  <h4 className='font-semibold'>info@on-dm.com</h4>
+                </div>
+              </motion.div>
+            </Link>
             <motion.div initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ ease: "easeInOut", duration: 1, delay: 2 }} className='flex items-center gap-x-5 justify-start mr-10'>

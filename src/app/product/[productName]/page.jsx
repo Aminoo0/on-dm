@@ -19,7 +19,7 @@ export default function ProductDetails({ params }) {
 
 
     return (<>
-        <section className="w-11/12 xl:w-9/12 mx-auto" >
+        <section className="w-11/12 xl:w-8/12 mx-auto" >
             <motion.div
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -27,7 +27,7 @@ export default function ProductDetails({ params }) {
                 className="flex flex-wrap gap-y-10 border-b-2 border-slate-500 border-opacity-15 w-full mx-auto py-10">
                 <div className="w-full lg:w-2/3 flex items-center lg:items-start justify-between flex-col bg-slate-100 rounded-md rounded-l-none p-5 order-2">
                     <div>
-                        <h1 className="text-3xl font-bold mb-10 text-violet-900">{product[0]?.name || productTwo[0]?.name || productThree[0]?.name}</h1>
+                        <h1 className="text-3xl font-bold mb-10">{product[0]?.name || productTwo[0]?.name || productThree[0]?.name}</h1>
                         <div className="flex gap-5 text-xl">
                             <h2 className="text-2xl items-center font-bold">{product[0]?.price || productTwo[0]?.price || productThree[0]?.price}  ر.س</h2>
                             <h2 className="line-through blur-[1px]">{product[0]?.oldPrice || productTwo[0]?.oldPrice || productThree[0]?.oldPrice}  ر.س</h2>
@@ -36,7 +36,7 @@ export default function ProductDetails({ params }) {
                     <div className="w-full">
                         <h2 className="text-center text-3xl font-bold my-5">اشترك الان</h2>
                         <div className="flex flex-wrap justify-center w-full gap-5 text-center">
-                            <Link href={''} className="w-full bg-[#ffd32b] py-5 px-10 rounded-lg flex items-center justify-center gap-3 text-xl hover:scale-105 duration-300">Pay With PAYPALL</Link>
+                            {/* <Link href={''} className="w-full bg-[#ffd32b] py-5 px-10 rounded-lg flex items-center justify-center gap-3 text-xl hover:scale-105 duration-300"><Image src={payPal} /> Pay With</Link> */}
                             <Link href={''} className="w-full bg-[#7ad03a] py-5 px-10 rounded-lg flex items-center justify-center gap-3 text-xl hover:scale-105 duration-300 text-white"><FaWhatsapp /> واتساب</Link>
                         </div>
                     </div>
@@ -44,7 +44,7 @@ export default function ProductDetails({ params }) {
                 <ProductImage id={keyword} />
             </motion.div>
             <div className="my-5">
-                <p className='my-10 font-semibold text-3xl italic text-violet-950'>{product[0]?.disc || productTwo[0]?.disc || productThree[0]?.disc}</p>
+                <p className='my-10 font-semibold text-3xl italic'>{product[0]?.disc || productTwo[0]?.disc || productThree[0]?.disc}</p>
                 <ul className="my-5 mt-20">
                     <h3 className="text-3xl my-5">نظرة عامة :</h3>
                     <li className='mr-10 font-semibold'>{product[0]?.overview || productTwo[0]?.overview || productThree[0]?.overview}</li>

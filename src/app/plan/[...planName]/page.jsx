@@ -6,7 +6,7 @@ import { plans } from "@/data/plans"
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
-
+// import payPal from "@/app/assits/paypal.svg";
 
 export default function PlanDetails({ params }) {
 
@@ -30,11 +30,11 @@ export default function PlanDetails({ params }) {
                             <h2 className="line-through blur-[1px]">{plan[0]?.oldPrice}  ر.س</h2>
                         </div>
                     </div>
-                    <div className="">
+                    <div className="w-full">
                         <h2 className="text-center text-3xl font-bold my-5">اشترك الان</h2>
                         <div className="flex flex-wrap justify-center w-full gap-5 text-center">
-                            <Link href={''} className="w-full bg-[#ffd32b] py-5 px-10 rounded-lg flex items-center justify-center gap-3 text-xl hover:scale-105 duration-300">Pay With PAYPALL</Link>
-                            <Link href={''} className="w-full bg-[#7ad03a] py-5 px-10 rounded-lg flex items-center justify-center gap-3 text-xl hover:scale-105 duration-300 text-white"><FaWhatsapp /> واتساب</Link>
+                            {/* <Link href={''} className="w-full bg-[#ffd32b] py-5 px-10 rounded-lg flex items-center justify-center gap-3 text-xl hover:scale-105 duration-300"><Image src={payPal} width={80} height={80} /> Pay With</Link> */}
+                            <Link href={'https://wa.me/201508301467'} className="w-full bg-[#7ad03a] py-5 px-10 rounded-lg flex items-center justify-center gap-3 text-xl hover:scale-105 duration-300 text-white"><FaWhatsapp /> واتساب</Link>
                         </div>
                     </div>
                 </div>

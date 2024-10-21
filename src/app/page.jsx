@@ -49,6 +49,27 @@ const jsonLdHome = [
       "query-input": "required name=search_term_string",
     },
   },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "On-Dm Tech",
+    "alternateName": "On-Dm",
+    "url": "https://on-dm.com/",
+    "logo": "",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+966566284570",
+      "contactType": "customer service",
+      "areaServed": "SA",
+      "availableLanguage": ["en", "Arabic"]
+    },
+    "sameAs": [
+      "https://www.youtube.com/channel/UCwZ5Qz-GGbPIqvrbQVAXwcg",
+      "https://www.linkedin.com/in/mohamed-abdullah-580490311/",
+      "https://www.instagram.com/ondm_official/",
+      "https://www.facebook.com/people/ONDM/61556612142969/"
+    ]
+  }
 ];
 
 export default function Home() {

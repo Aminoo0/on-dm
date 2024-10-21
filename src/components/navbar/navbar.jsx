@@ -198,7 +198,7 @@ export default function Navbar() {
             }
         </AnimatePresence>
 
-        <div onClick={goUp} className={`${arrow ? 'bottom-8' : '-bottom-20'} fixed duration-300 right-8 bg-[#ffd32b] rounded-full p-3 z-50 cursor-pointer animate-bounce hover:animate-none`}><FaArrowUpLong /></div>
+        <div onClick={goUp} className={`${arrow ? 'bottom-8' : '-bottom-20'} fixed right-8 bg-[#ffd32b] rounded-full p-3 z-50 cursor-pointer hover:scale-125 duration-300`}><FaArrowUpLong size={20} /></div>
 
     </>)
 }
