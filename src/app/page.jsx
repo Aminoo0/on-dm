@@ -8,10 +8,28 @@ import OurProducts from "@/components/ourProducts/ourProducts";
 import { plans } from "@/data/plans";
 
 
-let planName = plans.map((item) => item.name)
-let planImg = plans.map((item) => item.img.src)
-console.log(planName);
-console.log(planImg);
+let planName = plans.map((item) => {
+  return "@context"; "https://schema.org/",
+    "@type"; "Product",
+      "name"; `${item.name}`,
+        "image"; `${item.img}`,
+          "brand"; {
+    "@type"; "Brand",
+      "name"; "item"
+  }
+  "sku"; "123456",
+    "offers"; {
+    "@type"; "Offer",
+      "url"; "",
+        "priceCurrency"; "SAR",
+          "price"; "500",
+            "availability"; "https://schema.org/InStock",
+              "itemCondition"; "https://schema.org/NewCondition"
+  }
+})
+// let planImg = plans.map((item) => item.img.src)
+// console.log(planName);
+// console.log(planImg);
 
 
 
@@ -81,23 +99,7 @@ const jsonLdHome = [
     ]
   },
   {
-    "@context": "https://schema.org/",
-    "@type": "Product",
-    "name": `${planName}`,
-    "image": `${planImg}`,
-    "brand": {
-      "@type": "Brand",
-      "name": "item"
-    },
-    "sku": "123456",
-    "offers": {
-      "@type": "Offer",
-      "url": "",
-      "priceCurrency": "SAR",
-      "price": "500",
-      "availability": "https://schema.org/InStock",
-      "itemCondition": "https://schema.org/NewCondition"
-    }
+    planName
   }
 ];
 
