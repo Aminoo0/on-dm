@@ -1,5 +1,19 @@
 
+export const metadata = {
+    metadataBase: new URL(`https://on-dm.com/how-working`),
+    keywords: [''],
+    title: {
+        default: 'how-working',
+        template: `%s | On-Dm Tech`
+    },
+    openGraph: {
+        description: 'تصميم مواقع ومتاجر وتسويق إلكتروني - how-working',
+        images: ['']
+    }
+};
+
 export default function HowWorking() {
+
     return (
         <section className='w-10/12 lg:w-8/12 mx-auto'>
             <h1 className='text-5xl font-bold pt-10'>كيف نعمل</h1>

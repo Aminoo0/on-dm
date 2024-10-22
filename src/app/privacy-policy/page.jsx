@@ -1,4 +1,17 @@
 
+export const metadata = {
+    metadataBase: new URL(`https://on-dm.com/privacy-policy`),
+    keywords: [''],
+    title: {
+        default: 'privacy-policy',
+        template: `%s | On-Dm Tech`
+    },
+    openGraph: {
+        description: 'تصميم مواقع ومتاجر وتسويق إلكتروني - privacy-policy',
+        images: ['']
+    }
+};
+
 export default function privacyPolicy() {
     return (
         <section className='w-10/12 lg:w-8/12 mx-auto'>

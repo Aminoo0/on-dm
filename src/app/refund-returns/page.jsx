@@ -1,4 +1,17 @@
 
+export const metadata = {
+    metadataBase: new URL(`https://on-dm.com/refund-returns`),
+    keywords: [''],
+    title: {
+        default: 'refund-returns',
+        template: `%s | On-Dm Tech`
+    },
+    openGraph: {
+        description: 'تصميم مواقع ومتاجر وتسويق إلكتروني - refund-returns',
+        images: ['']
+    }
+};
+
 export default function refundReturns() {
     return (
         <section className='w-10/12 lg:w-8/12 mx-auto'>

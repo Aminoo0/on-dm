@@ -2,14 +2,17 @@
 
 import FilterTwo from "@/components/filterTwo/filterTwo";
 import ProductImage from "@/components/productImage/productImage";
+import { useAppContext } from "@/context/changePlansProvider";
 import { anotherProdcuts, anotherProdcutsThree, anotherProdcutsTwo } from "@/data/products";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 
 
 export default function ProductDetails({ params }) {
 
+    let { openImg, setOpenImg } = useAppContext()
     const product = anotherProdcuts?.filter((plan) => plan?.id == params?.productName)
     const productTwo = anotherProdcutsTwo?.filter((plan) => plan?.id == params?.productName)
     const productThree = anotherProdcutsThree?.filter((plan) => plan?.id == params?.productName)
@@ -43,6 +46,11 @@ export default function ProductDetails({ params }) {
                 </div>
                 <ProductImage id={keyword} />
             </motion.div>
+
+            <div onClick={() => setOpenImg(false)} className={`${openImg ? 'flex' : 'hidden'} fixed top-0 left-0 bottom-0 right-0 justify-center items-center bg-slate-800 cursor-pointer z-[60]`}>
+                <Image width={600} height={600} src={product[0]?.img || productTwo[0]?.img || productThree[0]?.img} alt={product[0]?.name || productTwo[0]?.name || productThree[0]?.name} className="mx-auto rounded-lg mt-5" />
+            </div>
+
             <div className="my-5">
                 <p className='my-10 font-semibold text-3xl italic'>{product[0]?.disc || productTwo[0]?.disc || productThree[0]?.disc}</p>
                 <ul className="my-5 mt-20">

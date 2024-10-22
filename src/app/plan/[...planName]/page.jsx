@@ -2,18 +2,18 @@
 
 import FilterOne from "@/components/filterOne/filterOne";
 import PlanImage from "@/components/planImage/planImage";
+import { useAppContext } from "@/context/changePlansProvider";
 import { plans } from "@/data/plans"
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
-// import payPal from "@/app/assits/paypal.svg";
 
 export default function PlanDetails({ params }) {
 
+    let { openImg, setOpenImg } = useAppContext()
     const keyword = params?.planName[0].replace(/%D8%AE%D8%B7%D8%A9-/g, '')
-
     const plan = plans?.filter((plann) => plann.link.replace(/خطة-/g, '') == keyword)
-    // console.log(params.planName[0]);
 
     return (<>
         <section className="w-11/12 xl:w-8/12 mx-auto" >
@@ -40,6 +40,10 @@ export default function PlanDetails({ params }) {
                 </div>
                 <PlanImage id={keyword} />
             </motion.div>
+
+            <div onClick={() => setOpenImg(false)} className={`${openImg ? 'fixed' : 'hidden'} flex top-0 left-0 bottom-0 right-0 justify-center items-center bg-slate-800 cursor-pointer z-[60]`}>
+                <Image width={600} height={600} src={plan[0]?.img} alt={plan[0]?.name} className="mx-auto rounded-lg" />
+            </div>
 
             <motion.div
                 initial={{ opacity: 0 }}
@@ -71,6 +75,6 @@ export default function PlanDetails({ params }) {
                     <FilterOne params={keyword} />
                 </div>
             </motion.div>
-        </section >
+        </section>
     </>)
 }

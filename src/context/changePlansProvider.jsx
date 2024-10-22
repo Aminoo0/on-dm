@@ -8,9 +8,10 @@ const AppContext = createContext(undefined)
 export function AppWrapper({ children }) {
 
     let [makeBlog, setMakeBlog] = useState(blogs);
+    const [openImg, setOpenImg] = useState(false)
 
     return (
-        <AppContext.Provider value={{ makeBlog, setMakeBlog }}>
+        <AppContext.Provider value={{ makeBlog, setMakeBlog, openImg, setOpenImg }}>
             {children}
         </AppContext.Provider>
     );
