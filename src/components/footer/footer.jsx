@@ -30,7 +30,7 @@ export default function Footer() {
                         <Link href={'/'} className="flex items-center gap-3 hover:mr-3 hover:text-[#ffd32b] duration-300"><FaArrowLeft color="#ffd32b" /> الشروط والأحكام</Link>
                         <Link href={'/privacy-policy'} className="flex items-center gap-3 hover:mr-3 hover:text-[#ffd32b] duration-300"><FaArrowLeft color="#ffd32b" /> سياسة الخصوصية</Link>
                         <Link href={'/refund-returns'} className="flex items-center gap-3 hover:mr-3 hover:text-[#ffd32b] duration-300"><FaArrowLeft color="#ffd32b" /> سياسة الإسترجاع</Link>
-                        <Link href={'/'} className="flex items-center gap-3 hover:mr-3 hover:text-[#ffd32b] duration-300"><FaArrowLeft color="#ffd32b" /> الأسئلة الشائعة</Link>
+                        <Link href={'/faqs'} className="flex items-center gap-3 hover:mr-3 hover:text-[#ffd32b] duration-300"><FaArrowLeft color="#ffd32b" /> الأسئلة الشائعة</Link>
                     </ul>
                 </div>
                 <div className="w-full lg:w-1/3">
